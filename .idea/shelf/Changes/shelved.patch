@@ -1,0 +1,18 @@
+Index: packages/hook/.fatherrc.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/packages/hook/.fatherrc.ts b/packages/hook/.fatherrc.ts
+new file mode 100644
+--- /dev/null	(date 1713095634920)
++++ b/packages/hook/.fatherrc.ts	(date 1713095634920)
+@@ -0,0 +1,8 @@
++import { defineConfig } from 'father';
++
++export default defineConfig({
++  // more father config: https://github.com/umijs/father/blob/master/docs/config.md
++  esm: { output: 'dist' },
++  umd: { output: 'umd', name: 'ShawboxHook' },
++  cjs: { output: 'lib' },
++});

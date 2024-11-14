@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Shawbox Ui",
+  "extends": "@shawbox/ts-config/react-ui.json",
+  "include": ["."]
+}

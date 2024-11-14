@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: daily commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;shawicx&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shawicx/shawbox-core.git&quot;,
+    &quot;accountId&quot;: &quot;ebf0b84f-f4bd-4bd3-a915-7de33a0ea424&quot;
+  }
+}</component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="q1lma7h6" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2ex8S76K3IgQUv9dH4rMNO0Pzfs" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "E:/shawbox/shawbox-core",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "D:\\shawbox\\shawbox-core\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.publish.executor": "Run",
+    "npm.release.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "E:\\shawbox\\shawbox-core\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.配色方案字体",
+    "ts.external.directory.path": "E:\\shawbox\\shawbox-core\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true",
+    "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.prj.diagnostic"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\shawbox\shawbox-core\packages\ui\src\gradient-border" />
+      <recent name="E:\shawbox\shawbox-core\packages\ui\src\card" />
+      <recent name="E:\shawbox\shawbox-core\packages\ui\src\caption" />
+      <recent name="E:\shawbox\shawbox-core\packages\util\src\base" />
+      <recent name="E:\shawbox\shawbox-core\packages\util\src\system" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\shawbox\shawbox-core\packages\util\src\data-structure" />
+      <recent name="D:\shawbox\shawbox-core\packages\ui" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.release">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="publish" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="publish" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="release" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="release" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.release" />
+        <item itemvalue="npm.publish" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="" />
+      <created>1712834869035</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712834869035</updated>
+      <workItem from="1712834869891" duration="237000" />
+      <workItem from="1712835130598" duration="3580000" />
+      <workItem from="1712838777302" duration="5000" />
+      <workItem from="1712838987938" duration="4373000" />
+      <workItem from="1712971431719" duration="7883000" />
+      <workItem from="1712986849496" duration="840000" />
+      <workItem from="1712987730553" duration="6131000" />
+      <workItem from="1713012004243" duration="1432000" />
+      <workItem from="1713095178258" duration="4124000" />
+      <workItem from="1713273091854" duration="733000" />
+      <workItem from="1713275352253" duration="1784000" />
+      <workItem from="1713596778958" duration="998000" />
+      <workItem from="1714391636167" duration="14000" />
+      <workItem from="1714427606496" duration="1343000" />
+      <workItem from="1714429684682" duration="1239000" />
+      <workItem from="1714482501827" duration="1606000" />
+      <workItem from="1714571690583" duration="2427000" />
+      <workItem from="1714574169560" duration="160000" />
+      <workItem from="1714574380951" duration="925000" />
+      <workItem from="1714615307630" duration="6418000" />
+      <workItem from="1716895422862" duration="26000" />
+      <workItem from="1716895469994" duration="2731000" />
+      <workItem from="1716898980371" duration="8664000" />
+      <workItem from="1716912730127" duration="291000" />
+      <workItem from="1716913067482" duration="2002000" />
+      <workItem from="1716980716000" duration="5087000" />
+      <workItem from="1717154004827" duration="5000" />
+      <workItem from="1721660054995" duration="94000" />
+      <workItem from="1721660156760" duration="49000" />
+      <workItem from="1721828571028" duration="4968000" />
+      <workItem from="1721920047252" duration="268000" />
+      <workItem from="1721995817408" duration="7077000" />
+      <workItem from="1722047341588" duration="10202000" />
+      <workItem from="1723126689913" duration="3129000" />
+      <workItem from="1723278774450" duration="3484000" />
+      <workItem from="1723345631103" duration="471000" />
+      <workItem from="1723351480082" duration="611000" />
+      <workItem from="1723862943342" duration="1839000" />
+      <workItem from="1725029515121" duration="118000" />
+      <workItem from="1725029716510" duration="66000" />
+      <workItem from="1725032469038" duration="12000" />
+      <workItem from="1726388062216" duration="651000" />
+      <workItem from="1726389002135" duration="2568000" />
+      <workItem from="1726752105642" duration="600000" />
+      <workItem from="1726972804420" duration="3164000" />
+      <workItem from="1727094394731" duration="4536000" />
+      <workItem from="1728558245345" duration="117000" />
+      <workItem from="1728558467918" duration="17000" />
+      <workItem from="1728811936189" duration="488000" />
+      <workItem from="1729995210438" duration="5527000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: publish command">
+      <option name="closed" value="true" />
+      <created>1714484062467</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714484062467</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: 目录结构重构">
+      <option name="closed" value="true" />
+      <created>1723280108347</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723280108347</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: util-file_添加文件下载方法">
+      <option name="closed" value="true" />
+      <created>1726391024436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726391024436</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: daily commit">
+      <option name="closed" value="true" />
+      <created>1729995389132</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729995389132</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: lint import sort" />
+    <MESSAGE value="feat: publish command" />
+    <MESSAGE value="feat: 目录结构重构" />
+    <MESSAGE value="feat: util-file_添加文件下载方法" />
+    <MESSAGE value="docs(changeset): chore: 九月发布" />
+    <MESSAGE value="feat: daily commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: daily commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/@amap/amap-jsapi-types/index.d.ts</url>
+          <line>436</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

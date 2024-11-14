@@ -1,0 +1,73 @@
+{
+  "name": "@shawbox/hook",
+  "version": "0.0.4",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/shawicx/shawicx-core#readme",
+  "bugs": {
+    "url": "https://github.com/shawicx/shawicx-core/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shawicx/shawicx-core.git"
+  },
+  "funding": "https://github.com/sponsors/shawicx",
+  "license": "ISC",
+  "author": "shawicx@skiff.com",
+  "sideEffects": false,
+  "main": "./lib/index.js",
+  "module": "./dist/index.js",
+  "scripts": {
+    "build": "father build",
+    "lint": "eslint .",
+    "lint:fix": "prettier --write . && eslint --fix ."
+  },
+  "prettier": "prettier-config-ali",
+  "eslintConfig": {
+    "extends": [
+      "ali/typescript/react",
+      "plugin:prettier/recommended"
+    ],
+    "plugins": [
+      "simple-import-sort"
+    ],
+    "rules": {
+      "simple-import-sort/imports": [
+        "error",
+        {
+          "groups": [
+            [
+              "^@?\\w"
+            ],
+            [
+              "^"
+            ],
+            [
+              "^\\."
+            ],
+            [
+              "^.+\\u0000$"
+            ],
+            [
+              "^\\u0000"
+            ]
+          ]
+        }
+      ],
+      "simple-import-sort/exports": "error"
+    }
+  },
+  "devDependencies": {
+    "@shawbox/ts-config": "workspace:^",
+    "eslint": "^8.57.0",
+    "eslint-config-ali": "^15.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "father": "^4.4.0",
+    "prettier": "^3.2.5",
+    "prettier-config-ali": "^1.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

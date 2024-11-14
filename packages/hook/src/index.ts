@@ -1,0 +1,1 @@
+export { useRegExp } from './useRegExp';
