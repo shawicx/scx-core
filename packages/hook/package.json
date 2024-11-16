@@ -1,6 +1,6 @@
 {
   "name": "@scxfe/hook",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/shawicx/shawicx-core#readme",
@@ -13,7 +13,7 @@
   },
   "funding": "https://github.com/sponsors/shawicx",
   "license": "ISC",
-  "author": "shawicx@skiff.com",
+  "author": "dev.rehab498@passinbox.com",
   "sideEffects": false,
   "main": "./lib/index.js",
   "module": "./dist/index.js",

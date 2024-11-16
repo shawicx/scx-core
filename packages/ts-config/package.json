@@ -1,10 +1,10 @@
 {
   "name": "@scxfe/ts-config",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "keywords": [
     "ts-config"
   ],
-  "author": "shawicx@skiff.com",
+  "author": "dev.rehab498@passinbox.com",
   "license": "ISC",
   "publishConfig": {
     "access": "public"
