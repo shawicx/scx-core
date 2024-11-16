@@ -1,4 +1,4 @@
-import type { AMapConstantType } from '@shawbox/util';
+import type { AMapConstantType } from '@scxfe/util';
 import type { CSSProperties } from 'react';
 
 export interface AMapContextValues {

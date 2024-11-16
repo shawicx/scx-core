@@ -3,7 +3,7 @@ toc: content
 ---
 
 ```tsx
-import { SeamlessCarousel } from '@shawbox/ui';
+import { SeamlessCarousel } from '@scxfe/ui';
 
 const data = new Array(5).fill(0).map((item, index) => {
   return { num: index };

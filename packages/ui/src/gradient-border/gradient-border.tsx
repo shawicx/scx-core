@@ -2,7 +2,7 @@
  * @description 边框渐变卡片
  */
 
-import { UI_CLASS_NAME_PREFIX } from '@shawbox/util';
+import { UI_CLASS_NAME_PREFIX } from '@scxfe/util';
 import classNames from 'classnames';
 import { Fragment, useMemo } from 'react';
 

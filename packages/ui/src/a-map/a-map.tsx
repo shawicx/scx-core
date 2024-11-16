@@ -1,4 +1,4 @@
-import { AMapConstant, loadScript, logger } from '@shawbox/util';
+import { AMapConstant, loadScript, logger } from '@scxfe/util';
 import { useMount, useUnmount } from 'ahooks';
 import { Children, cloneElement, useRef } from 'react';
 

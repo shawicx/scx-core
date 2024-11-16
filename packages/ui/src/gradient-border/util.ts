@@ -1,4 +1,4 @@
-import { convertColor } from '@shawbox/util';
+import { convertColor } from '@scxfe/util';
 
 import type { CSSProperties } from 'react';
 

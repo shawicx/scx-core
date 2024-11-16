@@ -11,9 +11,9 @@ export default defineConfig({
   outputPath: 'docs-dist',
   publicPath: '/',
   alias: {
-    '@shawbox/ui': resolve(__dirname, 'packages/ui/src/index.ts'),
-    '@shawbox/util': resolve(__dirname, 'packages/util/src/index.ts'),
-    '@shawbox/hook': resolve(__dirname, 'packages/hook/src/index.ts'),
+    '@scxfe/ui': resolve(__dirname, 'packages/ui/src/index.ts'),
+    '@scxfe/util': resolve(__dirname, 'packages/util/src/index.ts'),
+    '@scxfe/hook': resolve(__dirname, 'packages/hook/src/index.ts'),
   },
   resolve: {
     docDirs: ['docs'],

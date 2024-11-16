@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Shawbox Hook",
-  "extends": "@shawbox/ts-config/react-ui.json",
+  "display": "scxfe Hook",
+  "extends": "@scxfe/ts-config/react-ui.json",
   "include": ["."]
 }

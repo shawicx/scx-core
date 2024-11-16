@@ -1,5 +1,5 @@
 {
-  "name": "@shawbox/hook",
+  "name": "@scxfe/hook",
   "version": "0.0.4",
   "description": "",
   "keywords": [],
@@ -58,7 +58,7 @@
     }
   },
   "devDependencies": {
-    "@shawbox/ts-config": "workspace:^",
+    "@scxfe/ts-config": "workspace:^",
     "eslint": "^8.57.0",
     "eslint-config-ali": "^15.0.1",
     "eslint-config-prettier": "^9.1.0",

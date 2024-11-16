@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: daily commit" />
+    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: daily commit">
+      <change beforePath="$PROJECT_DIR$/.dumirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.dumirc.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hook/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hook/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hook/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hook/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hook/src/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hook/src/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hook/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hook/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ts-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ts-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/a-map/a-map.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/a-map/a-map.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/a-map/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/a-map/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/a-map/interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/a-map/interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/caption/caption.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/caption/caption.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/caption/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/caption/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/card/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/card/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/gradient-border/gradient-border.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/gradient-border/gradient-border.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/gradient-border/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/gradient-border/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/gradient-border/util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/gradient-border/util.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/seamless-roll/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/seamless-roll/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/data-structure/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/data-structure/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/logger/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/logger/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/system/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/system/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +52,11 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -28,9 +65,37 @@
     &quot;assignee&quot;: &quot;shawicx&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1731590682" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1731590681" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="ebf0b84f-f4bd-4bd3-a915-7de33a0ea424" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/shawicx/shawbox-core.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/shawicx/scx-core.git&quot;,
     &quot;accountId&quot;: &quot;ebf0b84f-f4bd-4bd3-a915-7de33a0ea424&quot;
   }
 }</component>
@@ -44,6 +109,7 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2ex8S76K3IgQUv9dH4rMNO0Pzfs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -52,10 +118,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "code.cleanup.on.save": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/shawbox/shawbox-core",
+    "last_opened_file_path": "E:/shawbox/scx-app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.stylelint": "true",
@@ -70,7 +137,7 @@
     "npm.publish.executor": "Run",
     "npm.release.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "E:\\shawbox\\shawbox-core\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.配色方案字体",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "ts.external.directory.path": "E:\\shawbox\\shawbox-core\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true",
     "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.prj.diagnostic"
@@ -142,7 +209,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -204,6 +271,8 @@
       <workItem from="1728558467918" duration="17000" />
       <workItem from="1728811936189" duration="488000" />
       <workItem from="1729995210438" duration="5527000" />
+      <workItem from="1731590101667" duration="2661000" />
+      <workItem from="1731721479506" duration="509000" />
     </task>
     <task id="LOCAL-00001" summary="feat: publish command">
       <option name="closed" value="true" />

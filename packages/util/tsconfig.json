@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Shawbox Util",
-  "extends": "@shawbox/ts-config/react-ui.json",
+  "display": "scxfe Util",
+  "extends": "@scxfe/ts-config/react-ui.json",
   "include": ["."],
   "compilerOptions": {
     "baseUrl": ".",

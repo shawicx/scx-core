@@ -10,7 +10,7 @@ toc: content
 /**
  * title: 是否合法的CSS属性
  */
-import { logger } from '@shawbox/util';
+import { logger } from '@scxfe/util';
 
 export default () => {
   return (

@@ -1,5 +1,5 @@
 {
-  "name": "@shawbox/util",
+  "name": "@scxfe/util",
   "version": "0.0.4",
   "description": "",
   "keywords": [],
@@ -63,7 +63,7 @@
     }
   },
   "devDependencies": {
-    "@shawbox/ts-config": "workspace:^",
+    "@scxfe/ts-config": "workspace:^",
     "@types/gradient-string": "^1.1.6",
     "eslint": "^8.57.0",
     "eslint-config-ali": "^15.0.1",

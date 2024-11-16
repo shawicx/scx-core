@@ -3,7 +3,7 @@ toc: content
 ---
 
 ```tsx
-import { GradientBorder, GradientBorderPlacement } from '@shawbox/ui';
+import { GradientBorder, GradientBorderPlacement } from '@scxfe/ui';
 
 export default function () {
   return (

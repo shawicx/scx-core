@@ -1,4 +1,4 @@
-import { UI_CLASS_NAME_PREFIX } from '@shawbox/util';
+import { UI_CLASS_NAME_PREFIX } from '@scxfe/util';
 import classnames from 'classnames';
 
 import type { CSSProperties, HtmlHTMLAttributes, ReactNode } from 'react';

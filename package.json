@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "shawbox",
+  "name": "scxfe",
   "homepage": "https://github.com/shawicx/shawicx-core#readme",
   "bugs": {
     "url": "https://github.com/shawicx/shawicx-core/issues"
@@ -29,7 +29,32 @@
   "commitlint": {
     "extends": [
       "ali"
-    ]
+    ],
+    "rules": {
+      "type-case": [
+        2,
+        "always",
+        [
+          "lower-case",
+          "upper-case"
+        ]
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "RELEASING",
+          "feat",
+          "fix",
+          "docs",
+          "style",
+          "test",
+          "refactor",
+          "chore",
+          "revert"
+        ]
+      ]
+    }
   },
   "lint-staged": {
     "*.{cjs,cts,js,jsx,mjs,mts,ts,tsx,vue}": "eslint --fix",

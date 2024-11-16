@@ -10,7 +10,7 @@ toc: content
 /**
  * title: 是否合法的CSS属性
  */
-import { isBrowserEnvironment } from '@shawbox/util';
+import { isBrowserEnvironment } from '@scxfe/util';
 
 export default () => {
   return <div>isBrowserEnvironment: {isBrowserEnvironment() ? '是' : '否'}</div>;

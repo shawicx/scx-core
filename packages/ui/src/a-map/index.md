@@ -8,8 +8,8 @@ group:
 ### 基本使用
 
 ```tsx
-import { AMap } from '@shawbox/ui';
-import { AMapConstant } from '@shawbox/util';
+import { AMap } from '@scxfe/ui';
+import { AMapConstant } from '@scxfe/util';
 
 export default function () {
   return <AMap apiKey={AMapConstant.API_KEY} width={'100%'} height={500} />;

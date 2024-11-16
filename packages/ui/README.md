@@ -1,5 +1,5 @@
 ---
-title: @shawbox/ui
+title: @scxfe/ui
 ---
 
 :::info{title=说明}

@@ -4,7 +4,7 @@ toc: content
 
 ```tsx
 import { Fragment } from 'react';
-import { Caption } from '@shawbox/ui';
+import { Caption } from '@scxfe/ui';
 
 export default function () {
   return (

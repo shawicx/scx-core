@@ -8,7 +8,7 @@ toc: content
 ### 双链表 DoublyLinkedList
 
 ```typescript
-import { DoublyLinkedList } from '@shawbox/util';
+import { DoublyLinkedList } from '@scxfe/util';
 
 const list = new DoublyLinkedList();
 
@@ -40,7 +40,7 @@ list.size; // 0
 ### 链表 LinkedList
 
 ```typescript
-import { LinkedList } from '@shawbox/util';
+import { LinkedList } from '@scxfe/util';
 
 const list = new LinkedList();
 
@@ -71,7 +71,7 @@ list.size; // 0
 ### 队列 Queue
 
 ```typescript
-import { Queue } from '@shawbox/util';
+import { Queue } from '@scxfe/util';
 
 const queue = new Queue();
 
@@ -95,7 +95,7 @@ queue.dequeue(); // 'C'
 ### 栈 Stack
 
 ```typescript
-import { Stack } from '@shawbox/util';
+import { Stack } from '@scxfe/util';
 
 const stack = new Stack();
 
