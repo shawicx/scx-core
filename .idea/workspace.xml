@@ -4,13 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: version,email">
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: lock">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hook/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hook/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/.vscode/settings.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -242,7 +254,7 @@
       <workItem from="1728811936189" duration="488000" />
       <workItem from="1729995210438" duration="5527000" />
       <workItem from="1731590101667" duration="2661000" />
-      <workItem from="1731721479506" duration="1305000" />
+      <workItem from="1731721479506" duration="1996000" />
     </task>
     <task id="LOCAL-00001" summary="feat: publish command">
       <option name="closed" value="true" />
@@ -292,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731722275061</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: lock">
+      <option name="closed" value="true" />
+      <created>1731722809973</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731722809973</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +327,8 @@
     <MESSAGE value="feat: daily commit" />
     <MESSAGE value="feat: package config" />
     <MESSAGE value="feat: version,email" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: version,email" />
+    <MESSAGE value="feat: lock" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: lock" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
