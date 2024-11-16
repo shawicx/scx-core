@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: package config">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hook/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hook/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ts-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ts-config/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/util/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/package.json" afterDir="false" />
+    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: version,email">
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,8 +170,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.release" />
-        <item itemvalue="npm.publish" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.publish" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -246,7 +242,7 @@
       <workItem from="1728811936189" duration="488000" />
       <workItem from="1729995210438" duration="5527000" />
       <workItem from="1731590101667" duration="2661000" />
-      <workItem from="1731721479506" duration="698000" />
+      <workItem from="1731721479506" duration="1305000" />
     </task>
     <task id="LOCAL-00001" summary="feat: publish command">
       <option name="closed" value="true" />
@@ -288,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731722112509</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: version,email">
+      <option name="closed" value="true" />
+      <created>1731722275061</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731722275061</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +306,8 @@
     <MESSAGE value="docs(changeset): chore: 九月发布" />
     <MESSAGE value="feat: daily commit" />
     <MESSAGE value="feat: package config" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: package config" />
+    <MESSAGE value="feat: version,email" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: version,email" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
