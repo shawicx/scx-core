@@ -1,5 +1,13 @@
 # @scxfe/ui
 
+## 0.0.3
+
+### Patch Changes
+
+- a328a02: fix: release
+- Updated dependencies [a328a02]
+  - @scxfe/util@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

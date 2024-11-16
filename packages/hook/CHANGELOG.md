@@ -1,5 +1,11 @@
 # @scxfe/hook
 
+## 0.0.3
+
+### Patch Changes
+
+- a328a02: fix: release
+
 ## 0.0.2
 
 ### Patch Changes
