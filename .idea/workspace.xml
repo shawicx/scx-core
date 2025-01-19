@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="feat: lock">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="fix: 删除.vscode">
+      <change afterPath="$PROJECT_DIR$/packages/util/src/browser/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/util/src/browser/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/util/src/browser/location.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dumirc.ts" beforeDir="false" afterPath="$PROJECT_DIR$/.dumirc.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hook/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/hook/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/util/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/util/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hook/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hook/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/constant/a-map.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/constant/a-map.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/logger/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/logger/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,34 +102,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "E:/shawbox/scx-app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.stylelint": "D:\\shawbox\\shawbox-core\\node_modules\\stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.publish.executor": "Run",
-    "npm.release.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "E:\\shawbox\\shawbox-core\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "E:\\shawbox\\shawbox-core\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true",
-    "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.prj.diagnostic"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/shawbox/scx-app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\shawbox\\shawbox-core\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.publish.executor&quot;: &quot;Run&quot;,
+    &quot;npm.release.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;E:\\shawbox\\shawbox-core\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;zielu.gittoolbox.app.config.v2&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\shawbox\\shawbox-core\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;zielu.gittoolbox.prj.config.selected.tab.id&quot;: &quot;zielu.gittoolbox.config.prj.diagnostic&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\shawbox\shawbox-core\packages\ui\src\gradient-border" />
@@ -138,7 +143,7 @@
       <recent name="D:\shawbox\shawbox-core\packages\ui" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.release">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -181,10 +186,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.release" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.publish" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +259,11 @@
       <workItem from="1728811936189" duration="488000" />
       <workItem from="1729995210438" duration="5527000" />
       <workItem from="1731590101667" duration="2661000" />
-      <workItem from="1731721479506" duration="1996000" />
+      <workItem from="1731721479506" duration="2616000" />
+      <workItem from="1731724129574" duration="201000" />
+      <workItem from="1731724574107" duration="1226000" />
+      <workItem from="1735542291512" duration="4758000" />
+      <workItem from="1737248401093" duration="467000" />
     </task>
     <task id="LOCAL-00001" summary="feat: publish command">
       <option name="closed" value="true" />
@@ -312,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731722809973</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: 删除.vscode">
+      <option name="closed" value="true" />
+      <created>1731723499600</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731723499600</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +345,8 @@
     <MESSAGE value="feat: package config" />
     <MESSAGE value="feat: version,email" />
     <MESSAGE value="feat: lock" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: lock" />
+    <MESSAGE value="fix: 删除.vscode" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 删除.vscode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

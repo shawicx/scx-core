@@ -1,13 +1,13 @@
 {
   "private": true,
   "name": "scxfe",
-  "homepage": "https://github.com/shawicx/shawicx-core#readme",
+  "homepage": "https://github.com/shawicx/scx-core#readme",
   "bugs": {
-    "url": "https://github.com/shawicx/shawicx-core/issues"
+    "url": "https://github.com/shawicx/scx-core/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shawicx/shawicx-core.git"
+    "url": "git+https://github.com/shawicx/scx-core.git"
   },
   "funding": "https://github.com/sponsors/shawicx",
   "author": {

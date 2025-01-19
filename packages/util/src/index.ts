@@ -1,3 +1,4 @@
+export { getLocation } from './browser';
 export { AMapConstant, type AMapConstantType, UI_CLASS_NAME_PREFIX } from './constant';
 export {
   DoublyLinkedList,

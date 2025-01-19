@@ -2,9 +2,9 @@ import { defineConfig } from 'dumi';
 import { resolve } from 'path';
 
 export default defineConfig({
-  title: 'shawbox',
+  title: 'scxfe',
   themeConfig: {
-    name: 'shawbox',
+    name: 'scxfe',
     lastUpdated: true,
     showLineNum: true,
   },
