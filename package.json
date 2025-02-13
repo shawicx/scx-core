@@ -24,7 +24,8 @@
     "prepublish": "turbo build",
     "publish": "changeset add && changeset version && changeset publish",
     "postaction": "git push origin main --tags",
-    "release": "pnpm run prepublish && pnpm run publish && pnpm run postaction"
+    "release": "pnpm run prepublish && pnpm run publish && pnpm run postaction",
+    "build:docs": "turbo build && dumi build"
   },
   "commitlint": {
     "extends": [
