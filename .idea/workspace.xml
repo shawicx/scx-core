@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="fix: 删除.vscode">
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shawbox-core.iml" beforeDir="false" />
+    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="fix: 文档构建命令">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/util/src/file/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/file/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/util/src/system/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/system/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/util/src/system/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/system/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/browser/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/browser/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/util/src/browser/location.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/util/src/browser/location.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +81,9 @@
   </component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -271,7 +268,12 @@
       <workItem from="1739277744701" duration="1905000" />
       <workItem from="1739282156286" duration="18000" />
       <workItem from="1739282283416" duration="1000" />
-      <workItem from="1739459374215" duration="523000" />
+      <workItem from="1739459374215" duration="1070000" />
+      <workItem from="1739598775574" duration="2150000" />
+      <workItem from="1740655599638" duration="610000" />
+      <workItem from="1740817224904" duration="30000" />
+      <workItem from="1742712286194" duration="469000" />
+      <workItem from="1742712771154" duration="1277000" />
     </task>
     <task id="LOCAL-00001" summary="feat: publish command">
       <option name="closed" value="true" />
@@ -337,7 +339,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731723499600</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix: 文档构建命令">
+      <option name="closed" value="true" />
+      <created>1739459975643</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739459975643</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,7 +364,8 @@
     <MESSAGE value="feat: version,email" />
     <MESSAGE value="feat: lock" />
     <MESSAGE value="fix: 删除.vscode" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 删除.vscode" />
+    <MESSAGE value="fix: 文档构建命令" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 文档构建命令" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

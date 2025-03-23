@@ -11,10 +11,23 @@ toc: content
 ```tsx
 import { getLocation } from '@scxfe/util';
 
+import { useState } from 'react';
+
 export default function () {
+  const [position, setPosition] = useState(null);
+
+  const onLocation = () => {
+    getLocation().then((res) => {
+      if (!(res instanceof Error)) {
+        setPosition(res);
+      }
+    });
+  };
+
   return (
     <div>
-      <button onClick={getLocation}>获取定位</button>
+      <button onClick={onLocation}>获取定位</button>
+      <div>定位信息: {position?.latitude || '-'} {position?.longitude || '-'}</div>
     </div>
   );
 }

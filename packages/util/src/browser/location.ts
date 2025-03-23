@@ -1,17 +1,9 @@
 import { logger } from '../logger';
 
 /**
- * @description 获取浏览器地理位置成功
- */
-const onBrowserLocationSuccess = (position: GeolocationPosition) => {
-  const { latitude, longitude } = position.coords;
-  logger.info(`Latitude: ${latitude}, Longitude: ${longitude}`);
-};
-
-/**
  * @description 获取浏览器地理位置失败
  */
-const onBrowserLocationError = (error: GeolocationPositionError) => {
+export const onBrowserLocationError = (error: GeolocationPositionError) => {
   switch (error.code) {
     case error.PERMISSION_DENIED:
       logger.error('用户拒绝了位置信息请求');
@@ -42,10 +34,20 @@ const OPTIONS: PositionOptions = {
  */
 export const getLocation = () => {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      onBrowserLocationSuccess,
-      onBrowserLocationError,
-      OPTIONS,
-    );
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          resolve({ latitude, longitude });
+        },
+        (error) => {
+          // onBrowserLocationError(error);
+          reject(error);
+        },
+        OPTIONS,
+      );
+    });
+  } else {
+    logger.error('浏览器不支持地理位置获取');
   }
 };
