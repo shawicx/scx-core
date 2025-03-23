@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="fix: 文档构建命令">
-      <change beforePath="$PROJECT_DIR$/.husky/pre-commit" beforeDir="false" afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
+    <list default="true" id="10c7b217-6704-4774-af43-0cbd9257f9eb" name="Changes" comment="fix: update dumi version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,15 +65,12 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="ebf0b84f-f4bd-4bd3-a915-7de33a0ea424" />
-  </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/shawicx/scx-core.git",
-    "accountId": "1591f15d-a54f-4346-b6ce-01bc2049c5f5"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shawicx/scx-core.git&quot;,
+    &quot;accountId&quot;: &quot;1591f15d-a54f-4346-b6ce-01bc2049c5f5&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="q1lma7h6" />
   </component>
@@ -96,35 +90,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/Users/scx/.local/state/fnm_multishells/4654_1739274904526/bin/node",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.stylelint": "D:\\shawbox\\shawbox-core\\node_modules\\stylelint",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/Users/scx/.local/state/fnm_multishells/4654_1739274904526/bin/node",
-    "nodejs_package_manager_path": "pnpm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.publish.executor": "Run",
-    "npm.release.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/scx/Documents/code/scx-core/node_modules/prettier",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "ts.external.directory.path": "/Users/scx/Documents/code/scx-core/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true",
-    "zielu.gittoolbox.prj.config.selected.tab.id": "zielu.gittoolbox.config.shared.autoFetch"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/scx/.local/state/fnm_multishells/4654_1739274904526/bin/node&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\shawbox\\shawbox-core\\node_modules\\stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/Users/scx/.local/state/fnm_multishells/4654_1739274904526/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.publish.executor&quot;: &quot;Run&quot;,
+    &quot;npm.release.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/scx/Documents/code/scx-core/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/scx/Documents/code/scx-core/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;zielu.gittoolbox.prj.config.selected.tab.id&quot;: &quot;zielu.gittoolbox.config.shared.autoFetch&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\shawbox\shawbox-core\packages\ui\src\gradient-border" />
@@ -274,7 +268,8 @@
       <workItem from="1740655599638" duration="610000" />
       <workItem from="1740817224904" duration="30000" />
       <workItem from="1742712286194" duration="469000" />
-      <workItem from="1742712771154" duration="3555000" />
+      <workItem from="1742712771154" duration="4946000" />
+      <workItem from="1742731202265" duration="41000" />
     </task>
     <task id="LOCAL-00001" summary="feat: publish command">
       <option name="closed" value="true" />
@@ -348,7 +343,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739459975643</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix: update dumi version">
+      <option name="closed" value="true" />
+      <created>1742720417365</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742720417365</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +380,8 @@
     <MESSAGE value="feat: lock" />
     <MESSAGE value="fix: 删除.vscode" />
     <MESSAGE value="fix: 文档构建命令" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 文档构建命令" />
+    <MESSAGE value="fix: update dumi version" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: update dumi version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
