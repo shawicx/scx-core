@@ -1,3 +1,7 @@
+/*
+ * @Author: shawicx d35f3153@proton.me
+ * @Description:
+ */
 export { getLocation } from './browser';
 export { AMapConstant, type AMapConstantType, UI_CLASS_NAME_PREFIX } from './constant';
 export {
@@ -8,7 +12,6 @@ export {
   Queue,
   Stack,
 } from './data-structure';
-export { logger } from './logger';
 export {
   isBrowserEnvironment,
   isCSSPropertySupported,

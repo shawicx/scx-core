@@ -1,5 +1,7 @@
-import { logger } from '~/logger';
-
+/*
+ * @Author: shawicx d35f3153@proton.me
+ * @Description:
+ */
 /**
  * @description 校验文件是否支持上传
  * @param fileType {string} 当前的文件类型
@@ -74,8 +76,9 @@ async function downloadLink(url: string, fileName?: string) {
     // 清理资源：移除 <a> 标签，并释放创建的临时 URL
     document.body.removeChild(a);
     window.URL.revokeObjectURL(linkUrl);
+    return Promise.resolve();
   } catch (error: unknown) {
-    logger.error('下载时出错:', error as string);
+    return Promise.reject(error);
   }
 }
 
@@ -89,16 +92,12 @@ export async function downloadFile(
   fileName?: string,
 ) {
   if (fileOrUrl instanceof File) {
-    logger.info('这是一个 File 对象');
     saveFile(fileOrUrl, fileName);
   } else if (fileOrUrl instanceof ArrayBuffer) {
-    logger.info('这是一个 ArrayBuffer 对象');
-    logger.warn('ArrayBuffer 对象暂不支持下载，请使用 File 对象');
+    return Promise.reject(new Error('ArrayBuffer 暂不支持下载，请使用 File 对象'));
   } else if (fileOrUrl instanceof Blob) {
-    logger.info('这是一个 Blob 对象');
-    logger.warn('Blob 对象暂不支持下载，请使用 File 对象');
+    return Promise.reject(new Error('Blob 暂不支持下载，请使用 File 对象'));
   } else {
-    await downloadLink(fileOrUrl as string, fileName);
-    logger.info('这是一个 文件 URL');
+    return await downloadLink(fileOrUrl as string, fileName);
   }
 }

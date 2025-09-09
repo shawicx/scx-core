@@ -1,4 +1,8 @@
-import { AMapConstant, loadScript, logger } from '@scxfe/util';
+/*
+ * @Author: shawicx d35f3153@proton.me
+ * @Description:
+ */
+import { AMapConstant, loadScript } from '@scxfe/util';
 import { useMount, useUnmount } from 'ahooks';
 import { Children, cloneElement, useRef } from 'react';
 
@@ -38,7 +42,6 @@ export const AMap = (props: AMapProps) => {
       window._AMapSecurityConfig = {
         securityJsCode: '7c1275cfebc337ceaa0984a2c1277491',
       };
-      logger.info('地图 API 即将加载');
       await window.AMapLoader.load({
         key: apiKey,
         version: '2.0',
@@ -49,14 +52,12 @@ export const AMap = (props: AMapProps) => {
         mapStyle: 'amap://styles/blue',
       };
       mapInstance.current = new window.AMap.Map(container, mapOptions);
-      logger.success('地图 API 完成加载');
     } catch (e: any) {
-      logger.error(e);
+      throw new Error(e);
     }
   };
 
   useMount(async () => {
-    logger.info(mapInstance.current ?? '', '地图');
     if (window.AMapLoader) {
       await loadApi();
     } else {
