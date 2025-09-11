@@ -1,11 +1,19 @@
 {
   "name": "@scxfe/ts-config",
+  "type": "module",
   "version": "0.0.3",
   "keywords": [
     "ts-config"
   ],
   "author": "dev.rehab498@passinbox.com",
   "license": "ISC",
+  "files": [
+    "base.json",
+    "library.json",
+    "react-ui.json",
+    "vue-ui.json",
+    "vue-hooks.json"
+  ],
   "publishConfig": {
     "access": "public"
   }

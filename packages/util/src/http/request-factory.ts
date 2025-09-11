@@ -2,13 +2,11 @@
  * @Author: shawicx d35f3153@proton.me
  * @Description: 请求工厂
  */
-import axios from 'axios';
-
-import type {
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  InternalAxiosRequestConfig,
+import axios, {
+  type AxiosInstance,
+  type AxiosRequestConfig,
+  type AxiosResponse,
+  type InternalAxiosRequestConfig,
 } from 'axios';
 
 interface RequestFactoryOptions {
@@ -43,7 +41,7 @@ function createRequestClient(options: RequestFactoryOptions = {}) {
   }
 
   function getRequestKey(url: string, { method, params, data }: AxiosRequestConfig): string {
-    const urlObj = new URL(url, window.location.origin);
+    const urlObj = new URL(url, 'http://localhost'); // 使用默认域名而不是 window.location.origin
     const paramsHash = params ? hashObject(params) : '';
     const dataHash = data ? hashObject(data) : '';
     return `${method}:${urlObj.pathname}:${paramsHash}:${dataHash}`;
@@ -77,7 +75,7 @@ function createRequestClient(options: RequestFactoryOptions = {}) {
 
     // 防止 GET 请求缓存
     if (config.method?.toUpperCase() === 'GET') {
-      config.params = { ...(config.params || {}), t: Date.now() };
+      config.params = { ...config.params, t: Date.now() };
     }
 
     return config;

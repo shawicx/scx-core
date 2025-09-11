@@ -2,6 +2,7 @@
  * @Author: shawicx d35f3153@proton.me
  * @Description:
  */
+
 /**
  * @description 校验文件是否支持上传
  * @param fileType {string} 当前的文件类型

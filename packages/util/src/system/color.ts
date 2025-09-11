@@ -1,3 +1,7 @@
+/*
+ * @Author: shawicx d35f3153@proton.me
+ * @Description:
+ */
 export interface ColorComponents {
   r: number;
   g: number;
@@ -40,7 +44,8 @@ export const convertColor = (color: string): ColorComponents => {
       }
     }
     return { r, g, b, a };
-  } catch (e) {
+  } catch {
+    // 将 e 改为 _e 表示这是一个未使用的变量
     return { r, g, b, a };
   }
 };

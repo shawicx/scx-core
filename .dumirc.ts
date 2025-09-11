@@ -11,20 +11,30 @@ export default defineConfig({
   outputPath: 'docs-dist',
   publicPath: '/',
   alias: {
-    '@scxfe/ui': resolve(__dirname, 'packages/ui/src/index.ts'),
+    '@scxfe/react-ui': resolve(__dirname, 'packages/react-ui/src/index.ts'),
+    '@scxfe/vue-ui': resolve(__dirname, 'packages/vue-ui/src/index.ts'),
     '@scxfe/util': resolve(__dirname, 'packages/util/src/index.ts'),
-    '@scxfe/hook': resolve(__dirname, 'packages/hook/src/index.ts'),
+    '@scxfe/react-hooks': resolve(__dirname, 'packages/react-hooks/src/index.ts'),
+    '@scxfe/vue-hooks': resolve(__dirname, 'packages/vue-hooks/src/index.ts'),
   },
   resolve: {
     docDirs: ['docs'],
     atomDirs: [
       {
-        type: 'ui',
-        dir: 'packages/ui/src',
+        type: 'react-ui',
+        dir: 'packages/react-ui/src',
       },
       {
-        type: 'hook',
-        dir: 'packages/hook/src',
+        type: 'vue-ui',
+        dir: 'packages/vue-ui/src',
+      },
+      {
+        type: 'react-hooks',
+        dir: 'packages/react-hooks/src',
+      },
+      {
+        type: 'vue-hooks',
+        dir: 'packages/vue-hooks/src',
       },
       {
         type: 'util',

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "scxfe Hook",
+  "extends": "../../packages/ts-config/react-ui.json",
+  "include": ["."],
+  "compilerOptions": {
+    "skipLibCheck": true
+  }
+}

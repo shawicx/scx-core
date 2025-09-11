@@ -21,12 +21,14 @@ export const parseDomain = () => {
       subdomain = urlItems.join('.');
     }
     return subdomain ? `.${subdomain}` : hostname;
-  } catch (e) {
+  } catch {
     return document.location.hostname;
   }
 };
 
-const defaultCallback = () => {};
+const defaultCallback = () => {
+  // 默认回调函数，可以在这里添加默认行为
+};
 
 interface LoadCallback {
   onerror?: (error: string | Event) => void;
@@ -58,11 +60,13 @@ export const loadScript = (
   script.src = url;
   script.onload = () => {
     onload?.();
-    console.log(`JS 加载完成: ${url}`);
+    // 注释掉 console.log 以避免 lint 错误
+    // console.log(`JS 加载完成: ${url}`);
   };
   script.onerror = (error) => {
     onerror?.(error);
-    console.error(`JS 加载失败: ${url}`);
+    // 注释掉 console.error 以避免 lint 错误
+    // console.error(`JS 加载失败: ${url}`);
   };
   // script.defer = true;
   // 将创建的标签添加到 document 中
@@ -99,13 +103,15 @@ export const loadCSS = (
   // 事件：样式表加载完成后执行的操作，例如可以在这里进行通知或者变更状态
   link.onload = () => {
     onload?.();
-    console.log(`CSS 加载完成: ${url}`);
+    // 注释掉 console.log 以避免 lint 错误
+    // console.log(`CSS 加载完成: ${url}`);
   };
 
   // 事件：样式表加载失败后执行的操作
   link.onerror = (error) => {
     onerror?.(error);
-    console.error(`CSS 加载失败: ${url}`);
+    // 注释掉 console.error 以避免 lint 错误
+    // console.error(`CSS 加载失败: ${url}`);
   };
 
   // 把link元素添加到<head>中

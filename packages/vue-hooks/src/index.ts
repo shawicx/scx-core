@@ -1,0 +1,2 @@
+// Vue Hooks Entry
+export {};
