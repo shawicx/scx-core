@@ -20,3 +20,4 @@ export {
   parseDomain,
 } from './system';
 export { convertColor } from './system/color';
+export { BiMapFactory } from './data-processing/bi-map';
