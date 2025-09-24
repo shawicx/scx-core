@@ -1,31 +1,10 @@
 /*
  * @Author: shawicx d35f3153@proton.me
- * @Description:
+ * @Description: 系统相关工具（非浏览器相关功能已迁移到 browser 模块）
  */
-import { getURLParameters, loadCSS, loadScript, parseDomain, toUrlParameters } from './system';
 
-/**
- * @description 当前环境是否浏览器环境
- */
-const isBrowserEnvironment = () => typeof window !== 'undefined';
+// 导出颜色处理工具
+export * from './color';
 
-/**
- * @description 是否 CSS 属性
- * @param property
- */
-const isCSSPropertySupported = (property: string) => {
-  if (!isBrowserEnvironment()) {
-    return false;
-  }
-  return property in document.body.style;
-};
-
-export {
-  getURLParameters,
-  isBrowserEnvironment,
-  isCSSPropertySupported,
-  loadCSS,
-  loadScript,
-  parseDomain,
-  toUrlParameters,
-};
+// 如果需要添加其他系统相关功能，可以在这里导出
+// 注意：浏览器相关功能请使用 browser 模块
