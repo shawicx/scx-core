@@ -20,4 +20,5 @@ export {
   parseDomain,
 } from './system';
 export { convertColor } from './system/color';
-export { BiMapFactory } from './data-processing/bi-map';
+export { BiMapFactory, rangeArray } from './data-processing';
+export { upperFirst, linkerToHump, lowerFirst, humpToLinker, DateFormat } from './common';
