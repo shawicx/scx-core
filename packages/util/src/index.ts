@@ -26,6 +26,15 @@ export {
   type LinkedNode,
   Queue,
   Stack,
+  Tree,
+  TreeNode,
+  BinaryTree,
+  type BinaryTreeNode,
+  type TraversalOrder,
+  Graph,
+  type GraphEdge,
+  type TraversalResult,
+  type ShortestPathResult,
 } from './data-structure';
 
 // 系统工具
