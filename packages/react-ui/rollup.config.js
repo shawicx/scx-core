@@ -1,30 +1,60 @@
-import { createRollupConfig, commonExternals } from '../../build-configs/rollup.config.base.js';
+import { defineConfig } from 'rollup';
+import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 
-const configs = createRollupConfig({
-  input: 'src/index.ts',
-  name: 'SCXReactUI',
-  external: {
-    ...commonExternals,
-    '@scxfe/util': '@scxfe/util',
-    ahooks: 'ahooks',
-  },
-  tsconfig: './tsconfig.json',
-  includeUmd: false, // React UI 组件库通常不需要 UMD
-});
-
-// 为每个配置添加 PostCSS 插件处理样式
-configs.forEach((config) => {
-  if (config.plugins) {
-    config.plugins.unshift(
-      postcss({
-        extract: true, // 提取 CSS 到单独文件
-        minimize: true,
-        modules: false,
-        plugins: [],
+export default defineConfig([
+  // ESM build
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/index.js',
+      format: 'esm',
+      sourcemap: true,
+    },
+    external: ['react', 'react-dom', 'react/jsx-runtime', '@scxfe/util', 'ahooks'],
+    plugins: [
+      resolve(),
+      commonjs(),
+      typescript({
+        tsconfig: './tsconfig.json',
+        declaration: false,
+        sourceMap: true,
       }),
-    );
-  }
-});
-
-export default configs;
+      postcss({
+        extract: false,
+        inject: true,
+        minimize: true,
+      }),
+      terser(),
+    ],
+  },
+  // CJS build
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'lib/index.js',
+      format: 'cjs',
+      sourcemap: true,
+      exports: 'named',
+    },
+    external: ['react', 'react-dom', 'react/jsx-runtime', '@scxfe/util', 'ahooks'],
+    plugins: [
+      resolve(),
+      commonjs(),
+      typescript({
+        tsconfig: './tsconfig.json',
+        declaration: false,
+        sourceMap: true,
+      }),
+      postcss({
+        extract: false,
+        inject: true,
+        minimize: true,
+      }),
+      terser(),
+    ],
+  },
+]);

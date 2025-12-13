@@ -50,6 +50,7 @@ export function createRollupConfig({
         declaration: false, // 类型声明单独生成
         declarationMap: false,
         outDir: undefined, // 避免与 Rollup 的输出目录冲突
+        sourceMap: true, // 启用源映射
       }),
       terser(),
     ],
@@ -77,6 +78,7 @@ export function createRollupConfig({
           declaration: false,
           declarationMap: false,
           outDir: undefined, // 避免与 Rollup 的输出目录冲突
+          sourceMap: true, // 启用源映射
         }),
         terser(),
       ],

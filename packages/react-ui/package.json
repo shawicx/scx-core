@@ -70,6 +70,7 @@
   },
   "devDependencies": {
     "@amap/amap-jsapi-types": "^0.0.15",
+    "@rollup/plugin-typescript": "^11.1.6",
     "@scxfe/ts-config": "workspace:^",
     "@turbo/gen": "^1.13.2",
     "@types/node": "^20.12.6",

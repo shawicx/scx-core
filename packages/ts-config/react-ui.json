@@ -4,8 +4,8 @@
   "extends": "./base.json",
   "compilerOptions": {
     "allowJs": true,
-    "declarationMap": true,
-    "isolatedModules": true,
+    "declarationMap": false,
+    "isolatedModules": false,
     "strict": true,
     "resolveJsonModule": true,
     "jsx": "react-jsx",
