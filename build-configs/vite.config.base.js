@@ -1,6 +1,6 @@
 /*
- * @Author: shawicx d35f3153@proton.me
- * @Description:
+ * @author: shawicx d35f3153@proton.me
+ * @description:
  */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';

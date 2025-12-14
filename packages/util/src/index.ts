@@ -45,3 +45,29 @@ export { BiMapFactory, rangeArray } from './data-processing';
 
 // 通用工具
 export { upperFirst, linkerToHump, lowerFirst, humpToLinker, DateFormat } from './common';
+
+// HTTP 模块
+export {
+  // 基础请求工厂
+  createRequestClient,
+  // 增强的HTTP客户端
+  HttpClient,
+  createHttpClient,
+} from './http';
+export type {
+  RequestFactoryOptions,
+  HttpRequestConfig,
+  UploadConfig,
+  DownloadConfig,
+  HttpResponse,
+  HttpError,
+} from './http';
+
+// 文件处理
+export {
+  // 文件下载功能
+  downloadFile,
+  saveFile,
+  // 文件类型检查
+  isFileTypeAccepted,
+} from './file/file';

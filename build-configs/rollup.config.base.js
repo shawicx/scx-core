@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import { dts } from 'rollup-plugin-dts';
+import json from '@rollup/plugin-json';
 
 /**
  * 创建基础 Rollup 配置
@@ -45,6 +46,7 @@ export function createRollupConfig({
         preferBuiltins: true,
       }),
       commonjs(),
+      json(),
       typescript({
         tsconfig,
         declaration: false, // 类型声明单独生成
@@ -73,6 +75,7 @@ export function createRollupConfig({
           preferBuiltins: true,
         }),
         commonjs(),
+        json(),
         typescript({
           tsconfig,
           declaration: false,

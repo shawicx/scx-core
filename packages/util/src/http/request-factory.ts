@@ -9,7 +9,10 @@ import axios, {
   type InternalAxiosRequestConfig,
 } from 'axios';
 
-interface RequestFactoryOptions {
+/**
+ * 请求工厂配置选项
+ */
+export interface RequestFactoryOptions {
   baseURL?: string; // 基础路径
   timeout?: number; // 超时时间
   getToken?: () => string | null; // 获取 token 的函数
@@ -18,6 +21,11 @@ interface RequestFactoryOptions {
   cancelDuplicate?: boolean; // 是否启用重复请求取消
 }
 
+/**
+ * 创建HTTP请求客户端
+ * @param options 配置选项
+ * @returns Axios实例
+ */
 function createRequestClient(options: RequestFactoryOptions = {}) {
   const {
     baseURL = '/api',
@@ -30,6 +38,11 @@ function createRequestClient(options: RequestFactoryOptions = {}) {
 
   const pendingRequests = new Map<string, AbortController>();
 
+  /**
+   * 对象哈希函数
+   * @param obj 要哈希的对象
+   * @returns 哈希字符串
+   */
   function hashObject(obj: unknown): string {
     const str = JSON.stringify(obj);
     return str
@@ -40,6 +53,12 @@ function createRequestClient(options: RequestFactoryOptions = {}) {
       .toString(36);
   }
 
+  /**
+   * 获取请求唯一标识
+   * @param url 请求URL
+   * @param config 请求配置
+   * @returns 请求唯一标识
+   */
   function getRequestKey(url: string, { method, params, data }: AxiosRequestConfig): string {
     const urlObj = new URL(url, 'http://localhost'); // 使用默认域名而不是 window.location.origin
     const paramsHash = params ? hashObject(params) : '';
