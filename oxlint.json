@@ -1,23 +1,15 @@
 {
+  "plugins": [],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
   "rules": {
+    // 错误级别规则
     "no-unused-vars": "error",
-    "no-undef": "warn",
-    "no-console": "warn",
-    "no-debugger": "warn",
-    "no-empty": "error",
-    "no-empty-function": "error",
-    "no-eval": "error",
-    "no-implied-eval": "error",
-    "no-invalid-regexp": "error",
-    "no-irregular-whitespace": "error",
-    "no-misleading-character-class": "error",
-    "no-prototype-builtins": "error",
-    "no-regex-spaces": "error",
-    "no-sparse-arrays": "error",
-    "no-template-curly-in-string": "error",
-    "no-unexpected-multiline": "error",
+    "no-undef": "error",
     "no-unreachable": "error",
-    "no-unsafe-finally": "error",
     "no-unsafe-negation": "error",
     "use-isnan": "error",
     "valid-typeof": "error",
@@ -28,13 +20,43 @@
     "no-duplicate-imports": "error",
     "no-new-symbol": "error",
     "no-this-before-super": "error",
+    "require-yield": "error",
+    "symbol-description": "error",
+
+    // 代码质量规则
+    "no-empty": "error",
+    "no-empty-function": "warn",
+    "no-implied-eval": "error",
+    "no-invalid-regexp": "error",
+    "no-prototype-builtins": "error",
+    "no-sparse-arrays": "error",
+    "no-template-curly-in-string": "error",
+    "no-unexpected-multiline": "error",
+    "no-unsafe-finally": "error",
+
+    // 代码风格规则
     "no-useless-computed-key": "error",
     "no-useless-constructor": "error",
     "no-useless-rename": "error",
     "prefer-const": "error",
     "prefer-rest-params": "error",
     "prefer-spread": "error",
-    "require-yield": "error",
-    "symbol-description": "error"
+
+    // 警告级别规则
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-eval": "error",
+    "no-irregular-whitespace": "error",
+    "no-misleading-character-class": "error",
+    "no-regex-spaces": "error",
+
+    // TypeScript相关规则
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/prefer-const": "error"
   }
 }

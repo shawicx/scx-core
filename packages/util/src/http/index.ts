@@ -9,11 +9,7 @@ export type { RequestFactoryOptions } from './request-factory';
 
 // 增强的HTTP客户端
 export { HttpClient, createHttpClient } from './client';
-export type {
-  HttpRequestConfig,
-  UploadConfig,
-  DownloadConfig
-} from './client';
+export type { HttpRequestConfig, UploadConfig, DownloadConfig } from './client';
 
 // 类型定义
 export type {

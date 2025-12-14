@@ -161,7 +161,6 @@ export class HttpClient {
       // 清理资源
       document.body.removeChild(a);
       window.URL.revokeObjectURL(downloadUrl);
-
     } catch (error: any) {
       throw new Error(`下载失败: ${error.message}`);
     }

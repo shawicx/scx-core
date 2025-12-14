@@ -1,6 +1,6 @@
 /*
  * @author: shawicx d35f3153@proton.me
- * @description 
+ * @description
  */
 import { defineConfig } from 'tsup';
 

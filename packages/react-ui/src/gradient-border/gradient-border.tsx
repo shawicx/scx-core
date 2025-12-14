@@ -10,8 +10,10 @@ import { getContainerStyle, getPseudoElementStyle, GradientBorderPlacement } fro
 
 import type { CSSProperties, DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from 'react';
 
-export interface GradientBorderProps
-  extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'translate'> {
+export interface GradientBorderProps extends Omit<
+  DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
+  'translate'
+> {
   /**
    * @description 渐变方向
    */

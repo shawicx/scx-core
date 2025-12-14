@@ -27,7 +27,9 @@ export default function () {
   return (
     <div>
       <button onClick={onLocation}>获取定位</button>
-      <div>定位信息: {position?.latitude || '-'} {position?.longitude || '-'}</div>
+      <div>
+        定位信息: {position?.latitude || '-'} {position?.longitude || '-'}
+      </div>
     </div>
   );
 }

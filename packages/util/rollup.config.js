@@ -1,4 +1,4 @@
-import { createRollupConfig, commonExternals } from '../../build-configs/rollup.config.base.js';
+import { createRollupConfig } from '../../build-configs/rollup.config.base.js';
 
 export default createRollupConfig({
   input: 'src/index.ts',

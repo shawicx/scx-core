@@ -24,40 +24,6 @@
     "lint:fix": "prettier --write . && oxlint --fix . --config ../../oxlint.json"
   },
   "prettier": "prettier-config-ali",
-  "eslintConfig": {
-    "extends": [
-      "ali/typescript/react",
-      "plugin:prettier/recommended"
-    ],
-    "plugins": [
-      "simple-import-sort"
-    ],
-    "rules": {
-      "simple-import-sort/imports": [
-        "error",
-        {
-          "groups": [
-            [
-              "^@?\\w"
-            ],
-            [
-              "^"
-            ],
-            [
-              "^\\."
-            ],
-            [
-              "^.+\\u0000$"
-            ],
-            [
-              "^\\u0000"
-            ]
-          ]
-        }
-      ],
-      "simple-import-sort/exports": "error"
-    }
-  },
   "devDependencies": {
     "@scxfe/ts-config": "workspace:^",
     "father": "^4.4.0",
