@@ -1,8 +1,6 @@
-/*
- * @Author: shawicx d35f3153@proton.me
- * @Description:
+/**
+ * @description 入口导出所有模块
  */
-
 // 浏览器相关工具
 export {
   getLocation,
@@ -16,7 +14,7 @@ export {
 } from './browser';
 
 // 常量定义
-export { AMapConstant, type AMapConstantType, UI_CLASS_NAME_PREFIX } from './constant';
+export { AMapConstant, type AMapConstantType, UI_CLASS_NAME_PREFIX } from './constants';
 
 // 数据结构
 export {
