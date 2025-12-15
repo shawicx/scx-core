@@ -1,5 +1,11 @@
 # @scxfe/util
 
+## 0.1.1
+
+### Patch Changes
+
+- 统一发布版本
+
 ## 0.1.0
 
 ### Minor Changes
