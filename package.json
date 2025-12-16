@@ -21,7 +21,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "oxlint . --config oxlint.json && stylelint \"**/*.{css,less,scss}\"",
     "lint:fix": "prettier --write . && oxlint --fix . --config oxlint.json && stylelint --fix \"**/*.{css,less,scss}\"",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prepublish": "turbo build",
     "publish": "changeset add && changeset version && changeset publish",
     "postaction": "git push origin main --tags",
