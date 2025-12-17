@@ -3,4 +3,6 @@
  * @Description:
  */
 // Vue UI Components Entry
-export {};
+export { Button, Counter, Card } from './components';
+
+export type { ButtonProps, CounterProps, CardProps } from './components';
