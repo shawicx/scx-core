@@ -189,7 +189,7 @@ export class ReactComponentParser {
    * 查找组件定义
    */
   private findComponentDefinition(
-    source: string,
+    _source: string,
     lines: string[],
   ): { name: string; type: ReactComponentParseResult['type']; line: number } | undefined {
     const patterns = [

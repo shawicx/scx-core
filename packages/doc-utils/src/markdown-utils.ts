@@ -286,7 +286,7 @@ export class MarkdownRenderer {
    * 渲染代码块，添加高亮支持
    */
   renderCodeBlocks(content: string): string {
-    return content.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
+    return content.replace(/```(\w+)?\n([\s\S]*?)```/g, (_match, language, code) => {
       const lang = language || 'text';
       return `<pre><code class="language-${lang}">${this.escapeHtml(code.trim())}</code></pre>`;
     });
@@ -296,7 +296,7 @@ export class MarkdownRenderer {
    * 渲染链接，添加外部链接标识
    */
   renderLinks(content: string): string {
-    return content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, text, url) => {
+    return content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text, url) => {
       const isExternal = url.startsWith('http') && !url.includes(location?.origin || '');
       const externalAttr = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
       return `<a href="${url}"${externalAttr}>${text}</a>`;
@@ -307,7 +307,7 @@ export class MarkdownRenderer {
    * 渲染标题，添加锚点
    */
   renderHeadings(content: string): string {
-    return content.replace(/^(#{1,6})\s+(.+)$/gm, (match, hashes, text) => {
+    return content.replace(/^(#{1,6})\s+(.+)$/gm, (_match, hashes, text) => {
       const level = hashes.length;
       const anchor = text
         .toLowerCase()

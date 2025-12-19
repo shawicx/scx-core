@@ -189,7 +189,7 @@ export class CodeParser {
   /**
    * 解析通用代码
    */
-  private parseGeneric(code: string, language: string): CodeParseResult {
+  private parseGeneric(_code: string, language: string): CodeParseResult {
     return {
       language,
       imports: [],

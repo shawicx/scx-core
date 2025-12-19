@@ -65,21 +65,17 @@ export class BaseTypeResolver implements TypeResolver {
   private parseTypeString(typeString: string): TypeRef {
     // 处理联合类型
     if (typeString.includes(' | ')) {
-      const unionTypes = typeString.split(' | ').map((t) => t.trim());
       return {
         name: 'Union',
         raw: typeString,
-        properties: unionTypes.map((t) => this.parseSimpleType(t)),
       };
     }
 
     // 处理数组类型
     if (typeString.endsWith('[]')) {
-      const elementType = typeString.slice(0, -2);
       return {
         name: 'Array',
         raw: typeString,
-        properties: [this.parseSimpleType(elementType)],
       };
     }
 
@@ -104,7 +100,7 @@ export class BaseTypeResolver implements TypeResolver {
       case 'object':
       case 'undefined':
       case 'null':
-        return { name: trimmed, builtin: true };
+        return { name: trimmed };
 
       default:
         return { name: trimmed };
@@ -155,8 +151,8 @@ export class EventExtractor {
       description: eventDef.description || '',
       payload: eventDef.payload
         ? {
-            type: eventDef.payload.type,
-            properties: eventDef.payload.properties || [],
+            name: eventDef.payload.name || 'unknown',
+            raw: eventDef.payload.raw || eventDef.payload.type,
           }
         : undefined,
     };
@@ -181,8 +177,7 @@ export class SlotExtractor {
     return {
       name: slotName,
       description: slotDef.description || '',
-      props: slotDef.props || [],
-      scoped: slotDef.scoped ?? false,
+      props: slotDef.props || {},
     };
   }
 

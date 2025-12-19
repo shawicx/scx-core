@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@scxfe/doc-schema": "workspace:^",
-    "scxe": "workspace:^"
+    "@scxfe/util": "workspace:^"
   },
   "devDependencies": {
     "tsup": "^8.5.1",

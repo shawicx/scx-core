@@ -447,8 +447,8 @@ export class VueComponentMetaExtractor {
       description: emit.description,
       ...(emit.payload && {
         payload: {
-          type: emit.payload,
-          properties: [],
+          name: emit.payload,
+          raw: emit.payload,
         },
       }),
     };
@@ -460,7 +460,7 @@ export class VueComponentMetaExtractor {
   private convertSlot(slotName: string): SlotMeta {
     return {
       name: slotName,
-      scoped: false, // Vue 插槽默认可能是作用域插槽，需要更复杂的检测逻辑
+      props: {}, // Vue 插槽默认可能是作用域插槽，需要更复杂的检测逻辑
     };
   }
 }
