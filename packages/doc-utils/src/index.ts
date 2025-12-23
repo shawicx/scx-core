@@ -11,3 +11,8 @@ export * from './markdown-utils.js';
 export * from './vue-utils.js';
 export * from './react-utils.js';
 export * from './file-utils.js';
+
+// 导出 API 提取器
+export * from './react-api-extractor.js';
+export * from './vue-api-extractor.js';
+export * from './component-api-scanner.js';

@@ -62,7 +62,7 @@ repo/
 │  ├─ vue-ui/
 │  ├─ vue-hooks/
 │  │
-│  ├─ docs-core/                     # ⭐ 文档运行时核心（无框架）
+│  ├─ docs-core/                     # 文档运行时核心（无框架）
 │  │  ├─ demo-registry.ts
 │  │  ├─ api-registry.ts
 │  │  └─ types.ts
@@ -77,7 +77,7 @@ repo/
 │  │  ├─ PropsTable.vue
 │  │  └─ HooksPanel.vue
 │  │
-│  ├─ doc-schema/                    # ⭐ API / Demo 语义模型
+│  ├─ doc-schema/                    # API / Demo 语义模型
 │  └─ doc-utils/                     # schema → UI 转换工具
 │
 ├─ configs/
@@ -103,7 +103,7 @@ docs-core   ──▶ doc-schema
 react-docs  ──▶ react-ui / react-hooks
 vue-docs    ──▶ vue-ui / vue-hooks
 
-packages/*  ❌ 不依赖 apps/*
+packages/*  不依赖 apps/*
 ```
 
 ---

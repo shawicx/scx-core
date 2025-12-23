@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "@scxfe/doc-schema": "workspace:^",
-    "@scxfe/util": "workspace:^"
+    "@scxfe/util": "workspace:^",
+    "react-docgen-typescript": "^2.4.0"
   },
   "devDependencies": {
     "tsup": "^8.5.1",
