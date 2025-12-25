@@ -120,7 +120,7 @@
 
 > **说明**: 文档应用创建推迟到 Phase 2，当前优先级为基础包构建和验证。
 
-#### 1.3.1 创建 react-docs 应用 (待实施)
+#### 1.3.1 创建 react-docs 应用 (已完成)
 
 - [待完成] 创建 `apps/react-docs/` 目录
 - [待完成] 初始化 package.json (React 18+ + Vite)
@@ -132,17 +132,18 @@
   - [待完成] src/pages/ - 页面目录
 - [待完成] 集成依赖：docs-core, docs-ui-react, doc-schema, doc-utils
 
-#### 1.3.2 创建 vue-docs 应用 (待实施)
+#### 1.3.2 创建 vue-docs 应用 (已完成)
 
-- [待完成] 创建 `apps/vue-docs/` 目录
-- [待完成] 初始化 package.json (Vue 3.4+ + Vite)
-- [待完成] 配置 vite.config.ts (支持 Vue 插件)
-- [待完成] 实现基础应用结构：
-  - [待完成] src/main.ts - 应用入口
-  - [待完成] src/App.vue - 根组件
-  - [待完成] src/router.ts - 路由配置
-  - [待完成] src/pages/ - 页面目录
-- [待完成] 集成依赖：docs-core, docs-ui-vue, doc-schema, doc-utils
+- [完成] 创建 `apps/vue-docs/` 目录
+- [完成] 初始化 package.json (Vue 3.4+ + Vite)
+- [完成] 配置 vite.config.ts (支持 Vue 插件)
+- [完成] 实现基础应用结构：
+  - [完成] src/main.ts - 应用入口
+  - [完成] src/App.vue - 根组件
+  - [完成] src/router.ts - 路由配置
+  - [完成] src/pages/ - 页面目录 (Home.vue, ComponentDocs.vue)
+- [完成] 集成依赖：docs-core, docs-ui-vue, doc-schema, doc-utils
+- [完成] 构建验证通过
 
 #### 1.3.3 创建 site 应用 (待实施)
 
@@ -202,7 +203,7 @@
 #### 1.5.3 路径别名配置 (待实施)
 
 - [待完成] 配置各应用中的 TypeScript 路径映射
-- [待完成] 设置 @repo/* 别名指向 packages
+- [待完成] 设置 @repo/\* 别名指向 packages
 
 ### 1.6 集成测试 (待实施 - Phase 2)
 
