@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      '@repo': path.resolve(__dirname, '../../packages'),
       '@scxfe/doc-schema': path.resolve(__dirname, '../../packages/doc-schema/src'),
       '@scxfe/doc-utils': path.resolve(__dirname, '../../packages/doc-utils/src'),
       '@scxfe/docs-core': path.resolve(__dirname, '../../packages/docs-core/src'),

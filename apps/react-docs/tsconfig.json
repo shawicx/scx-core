@@ -26,6 +26,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
+      "@repo/*": ["../../packages/*/src"],
       "@scxfe/doc-schema": ["../../packages/doc-schema/src"],
       "@scxfe/doc-utils": ["../../packages/doc-utils/src"],
       "@scxfe/docs-core": ["../../packages/docs-core/src"],

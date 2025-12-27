@@ -5,7 +5,13 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@repo/*": ["../../packages/*/src"],
+      "@scxfe/doc-schema": ["../../packages/doc-schema/src"],
+      "@scxfe/doc-utils": ["../../packages/doc-utils/src"],
+      "@scxfe/docs-core": ["../../packages/docs-core/src"],
+      "@scxfe/docs-ui-vue": ["../../packages/docs-ui-vue/src"],
+      "@scxfe/vue-ui": ["../../packages/vue-ui/src"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
