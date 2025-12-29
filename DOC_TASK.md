@@ -1,441 +1,391 @@
 # SCX Core 文档架构重构实施计划
 
-基于 DOC.md 的详细实施任务清单，分为三个阶段逐步推进。
+> 最后更新：2025-12-29
+> 状态：Stage 0 完成，Stage 1 进行中
 
-## 当前进度总览
+## 📊 进度概览
 
-- **Phase 1: 基础架构搭建** - 已完成 (2025-12-18)
-- **Phase 2: 功能完善** - 准备开始
-- **Phase 3: 高级功能** - 待实施
+| Stage   | 名称         | 状态        | 完成时间   |
+| ------- | ------------ | ----------- | ---------- |
+| Stage 0 | 基础架构搭建 | ✅ 完成     | 2025-12-27 |
+| Stage 1 | 端到端验证   | 🚧 进行中   | -          |
+| Stage 2 | 组件库扩展   | ⏸️ 待开始   | -          |
+| Stage 3 | 功能增强     | ⏸️ 待开始   | -          |
+| Stage 4 | 高级特性     | ⏸️ 长期目标 | -          |
 
-### Phase 1 主要成就
+---
 
-1. **核心包架构建立** - 成功创建 5 个核心包：
-   - `@scxfe/doc-schema` - 文档元数据类型定义
-   - `@scxfe/docs-core` - 文档系统核心功能
-   - `@scxfe/doc-utils` - 文档处理工具集
-   - `@scxfe/docs-ui-react` - React 文档 UI 组件
-   - `@scxfe/docs-ui-vue` - Vue 文档 UI 组件
+## 🎯 核心原则
 
-2. **构建系统验证** - 所有包构建成功，TypeScript 类型检查通过
-
-3. **架构原则实现** - 严格遵循 DOC.md 的 4 条核心原则，实现了文档系统与组件系统的完全解耦
-
-4. **跨框架支持** - React 和 Vue UI 组件库功能对等，共享统一的数据模型
-
-## 核心原则回顾
-
-1. **Demo 必须是真实运行时代码** - 无 DSL，无字符串模板，与用户使用方式一致
-2. **文档系统与组件系统彻底解耦** - packages 永不依赖 apps，demo 不污染组件本体
+1. **Demo 必须是真实运行时代码** - 无 DSL，无字符串模板
+2. **文档系统与组件系统彻底解耦** - packages 永不依赖 apps
 3. **React / Vue 不强行统一运行时** - 统一"语义模型"，不统一"实现模型"
-4. **80% 跨框架共享，20% 框架特化** - schema / 数据结构统一，UI 层分 React / Vue
+4. **80% 跨框架共享，20% 框架特化** - schema 统一，UI 分离
 
 ---
 
-## Phase 1: 基础架构搭建 (已完成)
+## ✅ Stage 0: 基础架构搭建 (已完成)
 
-### 1.1 核心包结构创建 (已完成)
+### 成就总结
 
-#### 1.1.1 创建 doc-schema 包 (已完成)
+**核心包 (5个)**
 
-- [完成] 创建 `packages/doc-schema/` 目录
-- [完成] 初始化 package.json (workspace: @scxfe/doc-schema)
-- [完成] 实现 src/index.ts 核心接口：
-  - [完成] TypeRef 接口
-  - [完成] PropMeta 接口
-  - [完成] EventMeta 接口
-  - [完成] SlotMeta 接口
-  - [完成] ComponentMeta 接口
-  - [完成] DemoMeta 接口
-  - [完成] ComponentRegistry 接口
-  - [完成] PageStructure 接口
-- [完成] 配置 TypeScript 构建 (tsup)
-- [待完成] 添加基础测试
+- ✅ `@scxfe/doc-schema` - 文档元数据类型定义
+- ✅ `@scxfe/docs-core` - 文档系统核心功能 (DocsRegistry, DemoRegistry)
+- ✅ `@scxfe/doc-utils` - 文档处理工具集 (API 提取、代码解析)
+- ✅ `@scxfe/docs-ui-react` - React 文档 UI 组件 (DemoLayout, PropsTable 等)
+- ✅ `@scxfe/docs-ui-vue` - Vue 文档 UI 组件 (功能对等)
 
-#### 1.1.2 创建 docs-core 包 (已完成)
+**文档应用 (3个)**
 
-- [完成] 创建 `packages/docs-core/` 目录
-- [完成] 初始化 package.json (workspace: @scxfe/docs-core)
-- [完成] 实现核心功能模块：
-  - [完成] demo-registry.ts - Demo 注册系统
-  - [完成] api-registry.ts - API 元数据加载
-  - [完成] types.ts - 类型定义 (引用 doc-schema)
-- [完成] 实现组件注册函数 `registerComponent()`
-- [完成] 配置构建和测试
-- [待完成] 添加基础测试
+- ✅ `react-docs` - React 组件文档应用 (Vite + React 18)
+- ✅ `vue-docs` - Vue 组件文档应用 (Vite + Vue 3.4)
+- ✅ `site` - 项目主页 (landing page)
 
-#### 1.1.3 创建 doc-utils 包 (已完成)
+**构建系统**
 
-- [完成] 创建 `packages/doc-utils/` 目录
-- [完成] 初始化 package.json (workspace: @scxfe/doc-utils)
-- [完成] 实现 schema → UI 转换工具：
-  - [完成] PropsTable 生成器
-  - [完成] EventsTable 生成器
-  - [完成] SlotsTable 生成器
-  - [完成] 文件系统工具 (file-utils.ts)
-  - [完成] Markdown 处理工具 (markdown-utils.ts)
-  - [完成] 代码解析工具 (code-parser.ts)
-  - [完成] React 工具 (react-utils.ts)
-  - [完成] Vue 工具 (vue-utils.ts)
-  - [完成] API 提取工具 (api-extractor.ts)
-  - [完成] React API 提取器 (react-api-extractor.ts)
-  - [完成] Vue API 提取器 (vue-api-extractor.ts)
-  - [完成] 组件 API 扫描器 (component-api-scanner.ts)
-- [待完成] 添加基础测试
+- ✅ Turbo 配置完成，支持增量构建
+- ✅ 路径别名配置完成 (@repo/\*)
+- ✅ 所有包构建验证通过
 
-### 1.2 框架特定 UI 包创建 (已完成)
+**API 自动提取**
 
-#### 1.2.1 创建 docs-ui-react 包 (已完成)
+- ✅ React API 提取器 (react-docgen-typescript)
+- ✅ Vue API 提取器 (vue-docgen-api)
+- ✅ 类型映射和 schema 转换
 
-- [完成] 创建 `packages/docs-ui-react/` 目录
-- [完成] 初始化 package.json (依赖 React 18+)
-- [完成] 实现核心组件：
-  - [完成] DemoLayout.tsx - Demo 布局容器
-  - [完成] PropsTable.tsx - Props 表格组件
-  - [完成] EventsTable.tsx - Events 表格组件
-  - [完成] SlotsTable.tsx - Slots 表格组件
-  - [完成] HooksPanel.tsx - Hooks 面板组件
-- [完成] 实现响应式设计
-- [完成] 配置 TypeScript 构建 (tsup)
-- [完成] 完整类型定义 (types.ts)
-- [待完成] 添加基础测试
+### 现有组件清单
 
-#### 1.2.2 创建 docs-ui-vue 包 (已完成)
-
-- [完成] 创建 `packages/docs-ui-vue/` 目录
-- [完成] 初始化 package.json (依赖 Vue 3.4+)
-- [完成] 实现核心组件 (与 React 版本功能对等)：
-  - [完成] DemoLayout.vue - Demo 布局容器
-  - [完成] PropsTable.vue - Props 表格组件
-  - [完成] EventsTable.vue - Events 表格组件
-  - [完成] SlotsTable.vue - Slots 表格组件
-  - [完成] HooksPanel.vue - Hooks 面板组件
-- [完成] 实现响应式设计
-- [完成] 配置 Vite 构建
-- [完成] 完整类型定义 (types.ts)
-- [完成] Vue 插件系统 (index.ts)
-- [待完成] 添加基础测试
-
-### 1.3 文档应用创建 (待实施)
-
-> **说明**: 文档应用创建推迟到 Phase 2，当前优先级为基础包构建和验证。
-
-#### 1.3.1 创建 react-docs 应用 (已完成)
-
-- [待完成] 创建 `apps/react-docs/` 目录
-- [待完成] 初始化 package.json (React 18+ + Vite)
-- [待完成] 配置 vite.config.ts (支持 React 插件)
-- [待完成] 实现基础应用结构：
-  - [待完成] src/main.tsx - 应用入口
-  - [待完成] src/App.tsx - 根组件
-  - [待完成] src/router.tsx - 路由配置
-  - [待完成] src/pages/ - 页面目录
-- [待完成] 集成依赖：docs-core, docs-ui-react, doc-schema, doc-utils
-
-#### 1.3.2 创建 vue-docs 应用 (已完成)
-
-- [完成] 创建 `apps/vue-docs/` 目录
-- [完成] 初始化 package.json (Vue 3.4+ + Vite)
-- [完成] 配置 vite.config.ts (支持 Vue 插件)
-- [完成] 实现基础应用结构：
-  - [完成] src/main.ts - 应用入口
-  - [完成] src/App.vue - 根组件
-  - [完成] src/router.ts - 路由配置
-  - [完成] src/pages/ - 页面目录 (Home.vue, ComponentDocs.vue)
-- [完成] 集成依赖：docs-core, docs-ui-vue, doc-schema, doc-utils
-- [完成] 构建验证通过
-
-#### 1.3.3 创建 site 应用 (已完成)
-
-- [完成] 创建 `apps/site/` 目录
-- [完成] 初始化 package.json (Vue 3+ + Vite)
-- [完成] 实现简单 landing 页面：
-  - [完成] 框架选择界面
-  - [完成] 设计理念说明
-  - [完成] 跳转链接
-- [完成] 保持轻量级，不展示 demo
-- [完成] 构建验证通过
-
-### 1.4 Demo 规范实现 (待实施 - Phase 2)
-
-> **说明**: Demo 规范实施推迟到 Phase 2，需要先有文档应用才能验证 demo 展示效果。
-
-#### 1.4.1 Vue Demo 示例 (待实施)
-
-- [待完成] 在 `packages/vue-ui/` 创建 `demos/` 目录
-- [待完成] 实现 ButtonBasic.demo.vue：
-  ```vue
-  <script setup lang="ts">
-  import { Button } from '../src';
-  </script>
-  <template>
-    <Button>Click</Button>
-  </template>
-  ```
-- [待完成] 实现 ButtonDisabled.demo.vue
-- [待完成] 验证 SFC 导入机制
-
-#### 1.4.2 React Demo 示例 (待实施)
-
-- [待完成] 在 `packages/react-ui/` 创建 `demos/` 目录
-- [待完成] 实现 ButtonBasic.demo.tsx：
-  ```tsx
-  import { Button } from '../src';
-  export default function Demo() {
-    return <Button>Click</Button>;
-  }
-  ```
-- [待完成] 实现 ButtonDisabled.demo.tsx
-- [待完成] 验证组件导入机制
-
-### 1.5 构建系统配置 (已完成)
-
-#### 1.5.1 Turbo 配置更新 (已完成)
-
-- [完成] 更新 turbo.json 添加新包的构建任务 (继承全局配置)
-- [完成] 配置依赖关系 (apps → packages)
-- [完成] 设置缓存策略
-
-#### 1.5.2 Workspace 配置 (已完成)
-
-- [完成] 更新 pnpm-workspace.yaml 包含所有新包
-- [完成] 验证包依赖解析
-
-#### 1.5.3 路径别名配置 (已完成)
-
-- [完成] 配置各应用中的 TypeScript 路径映射
-- [完成] 设置 @repo/\* 别名指向 packages
-- [完成] react-docs 和 vue-docs 都已配置 @repo/\* 通配符别名
-- [完成] 两个应用构建验证通过
-
-### 1.6 集成测试 (待实施 - Phase 2)
-
-> **说明**: 端到端测试需要文档应用完成后才能进行。
-
-#### 1.6.1 端到端测试 (待实施)
-
-- [待完成] 验证 Button demo 在 React 文档中正常渲染
-- [待完成] 验证 Button demo 在 Vue 文档中正常渲染
-- [待完成] 测试 API 元数据展示
-- [待完成] 验证 Props 表格生成
-
-#### 1.6.2 开发环境测试 (部分完成)
-
-- [完成] 验证包构建功能 (所有包构建成功)
-- [完成] 测试组件增量构建
-- [完成] 验证 TypeScript 类型检查
-- [待完成] 验证热重载功能 (需要文档应用)
+| 包                 | 组件                                   | 状态    |
+| ------------------ | -------------------------------------- | ------- |
+| @scxfe/react-ui    | AMap, Caption, Card, GradientBorder    | ✅ 可用 |
+| @scxfe/vue-ui      | Button, Counter, Card                  | ✅ 可用 |
+| @scxfe/react-hooks | useRegExp                              | ✅ 可用 |
+| @scxfe/vue-hooks   | useCounter, useToggle, useLocalStorage | ✅ 可用 |
 
 ---
 
-## Phase 2: 功能完善 (当前优先级)
+## 🚧 Stage 1: 端到端验证 (当前优先级)
 
-### 2.1 API 自动生成
+> **目标**: 创建第一个完整的组件文档示例，验证整个文档系统是否正常工作
 
-#### 2.1.1 React 组件 API 提取
+### 为什么选择 Vue Button 作为第一个示例？
 
-- [完成] 集成 react-docgen-typescript
-- [完成] 实现组件 Props 自动扫描
-- [完成] 提取 Events 和 Slots 信息
-- [完成] 生成标准化 ComponentMeta
+- ✅ 组件简单，API 清晰
+- ✅ 现有组件，无需开发
+- ✅ Vue SFC 格式对 demo 友好
+- ✅ 可作为后续组件的模板
 
-#### 2.1.2 Vue 组件 API 提取
+### 任务清单
 
-- [完成] 集成 vue-docgen-api
-- [完成] 实现组件 Props 自动扫描
-- [完成] 提取 Emits 和 Slots 信息
-- [完成] 生成标准化 ComponentMeta
+#### 1.1 创建 Demo 文件 ✅
 
-#### 2.1.3 类型映射
+- [x] 在 `packages/vue-ui/components/` 创建 `demos/` 目录
+- [x] 实现 `demos/ButtonBasic.demo.vue` (基础用法)
+- [x] 实现 `demos/ButtonDisabled.demo.vue` (禁用状态)
+- [x] 实现 `demos/ButtonLoading.demo.vue` (加载状态)
+- [x] 实现 `demos/ButtonSize.demo.vue` (不同尺寸)
+- [x] 实现 `demos/ButtonModifiers.demo.vue` (块级和圆角)
+- [x] 添加 demo 元数据 (title, description)
+- [x] 创建 README 文档说明 demo 使用方式
 
-- [完成] 实现 React → 通用 schema 映射
-- [完成] 实现 Vue → 通用 schema 映射
-- [完成] 处理框架特定概念 (如 React children → Vue slots)
+#### 1.2 集成到文档应用
 
-### 2.2 Hooks Demo 规范化
+- [ ] 在 `apps/vue-docs/src/` 创建 `lib/registry.ts`
+- [ ] 使用 DocsRegistry 注册 Button 组件
+- [ ] 配置 demo 加载器
+- [ ] 配置 API 元数据提取器
 
-#### 2.2.1 React Hooks Demo
+#### 1.3 实现组件文档页面
 
-- [待完成] 在 `packages/react-hooks/` 创建 demos/
-- [待完成] 实现 useToggle.demo.tsx
-- [待完成] 实现 useCounter.demo.tsx
-- [待完成] 实现 useLocalStorage.demo.tsx
-- [待完成] 添加 hooks 状态展示
+- [ ] 重写 `apps/vue-docs/src/pages/ComponentDocs.vue`
+- [ ] 集成 docs-ui-vue 组件 (DemoLayout, PropsTable)
+- [ ] 实现 demo 渲染逻辑
+- [ ] 实现 API 文档展示
 
-#### 2.2.2 Vue Hooks Demo
+#### 1.4 端到端测试
 
-- [待完成] 在 `packages/vue-hooks/` 创建 demos/
-- [待完成] 实现 useToggle.demo.vue
-- [待完成] 实现 useCounter.demo.vue
-- [待完成] 实现 useLocalStorage.demo.vue
-- [待完成] 添加组合式函数状态展示
+- [ ] 启动 vue-docs 开发服务器
+- [ ] 访问 `/button` 页面，验证渲染
+- [ ] 检查 demo 是否正常显示和交互
+- [ ] 验证 PropsTable 是否正确提取 API
+- [ ] 测试代码复制功能
+- [ ] 验证响应式设计
 
-#### 2.2.3 Hooks 文档增强
+#### 1.5 文档和模板
 
-- [待完成] 扩展 ComponentMeta 支持 Hooks
-- [待完成] 实现 Hooks 参数和返回值展示
-- [待完成] 添加使用示例展示
+- [ ] 记录实施过程和遇到的问题
+- [ ] 编写《组件 Demo 创建指南》
+- [ ] 更新开发文档
 
-### 2.3 组件扩展
+### 完成标准
 
-#### 2.3.1 更多组件 Demo
+- [ ] Button demo 在 vue-docs 中正常渲染
+- [ ] API 元数据自动提取并正确显示
+- [ ] PropsTable 显示组件的所有 props
+- [ ] Demo 可以交互和编辑代码
+- [ ] 页面样式和响应式正常
 
-- [待完成] 为现有 UI 组件添加 demo
-- [待完成] 实现复杂组件 demo (如 Modal、Table)
-- [待完成] 添加组件组合示例
+### 预期产出
 
-#### 2.3.2 Demo 元数据
-
-- [待完成] 实现 demo 标题和描述
-- [待完成] 添加 demo 分类标签
-- [待完成] 实现 demo 搜索功能
-
-### 2.4 文档应用完善
-
-#### 2.4.1 导航系统
-
-- [待完成] 实现组件树导航
-- [待完成] 添加快速搜索功能
-- [待完成] 实现面包屑导航
-
-#### 2.4.2 交互功能
-
-- [待完成] 实现代码复制功能
-- [待完成] 添加全屏预览模式
-- [待完成] 实现主题切换
-
-#### 2.4.3 性能优化
-
-- [待完成] 实现代码分割和懒加载
-- [待完成] 优化 demo 加载性能
-- [待完成] 添加加载状态指示
+- ✅ 可工作的 Button 组件文档页面
+- ✅ 标准的 demo 文件模板
+- ✅ 组件注册和加载流程文档
+- ✅ 为 Stage 2 批量添加 demo 提供参考
 
 ---
 
-## Phase 3: 高级功能 (长期目标)
+## 📦 Stage 2: 组件库扩展
 
-### 3.1 Props Playground
+> **目标**: 为所有现有组件添加 demo，建立完整的文档体系
 
-#### 3.1.1 交互式 Props 编辑
+### 2.1 Vue UI 组件 Demo
 
-- [待完成] 实现 Props 表格编辑器
-- [待完成] 实时更新 demo 组件
-- [待完成] 支持各种数据类型编辑 (string, number, boolean, select)
+#### Button 组件 (已在 Stage 1 完成)
 
-#### 3.1.2 状态同步
+- [x] ButtonBasic
+- [x] ButtonDisabled
+- [x] 其他变体
 
-- [待完成] 实现 URL 状态同步
-- [待完成] 支持分享配置链接
-- [待完成] 添加重置功能
+#### Card 组件
 
-#### 3.1.3 高级功能
+- [ ] 实现 `CardBasic.demo.vue`
+- [ ] 实现 `CardWithActions.demo.vue`
+- [ ] 实现 `CardCustom.demo.vue`
+- [ ] 集成到 vue-docs
 
-- [待完成] 支持 Props 验证和错误提示
-- [待完成] 实现 Props 导入/导出
-- [待完成] 添加历史记录功能
+#### Counter 组件
 
-### 3.2 API 版本管理
+- [ ] 实现 `CounterBasic.demo.vue`
+- [ ] 实现 `CounterWithMinMax.demo.vue`
+- [ ] 实现 `CounterCustom.demo.vue`
+- [ ] 集成到 vue-docs
 
-#### 3.2.1 版本对比
+### 2.2 React UI 组件 Demo
 
-- [待完成] 实现组件 API 版本对比
-- [待完成] 高亮显示 breaking changes
-- [待完成] 生成变更日志
+#### Card 组件
 
-#### 3.2.2 迁移指南
+- [ ] 实现 `CardBasic.demo.tsx`
+- [ ] 实现 `CardWithMode.demo.tsx`
+- [ ] 实现 `CardCustom.demo.tsx`
+- [ ] 集成到 react-docs
 
-- [待完成] 自动生成迁移代码示例
-- [待完成] 提供升级步骤说明
-- [待完成] 集成到文档界面
+#### Caption 组件
 
-### 3.3 多框架扩展
+- [ ] 实现 `CaptionBasic.demo.tsx`
+- [ ] 实现 `CaptionWithText.demo.tsx`
+- [ ] 集成到 react-docs
 
-#### 3.3.1 框架架构准备
+#### GradientBorder 组件
 
-- [待完成] 评估添加 Svelte 支持的成本
-- [待完成] 设计通用插件接口
-- [待完成] 实现框架检测机制
+- [ ] 实现 `GradientBorderBasic.demo.tsx`
+- [ ] 实现 `GradientBorderWithPlacement.demo.tsx`
+- [ ] 集成到 react-docs
 
-#### 3.3.2 新框架支持
+#### AMap 组件 (复杂组件)
 
-- [待完成] 实现 docs-ui-svelte
-- [待完成] 添加 svelte-docs 应用
-- [待完成] 实现到 site 的集成
+- [ ] 实现 `AMapBasic.demo.tsx`
+- [ ] 实现 `AMapWithMarker.demo.tsx`
+- [ ] 实现 `AMapCustom.demo.tsx`
+- [ ] 集成到 react-docs
 
-### 3.4 开发体验优化
+### 2.3 Hooks Demo
 
-#### 3.4.1 本地开发工具
+#### Vue Hooks
 
-- [待完成] 实现 CLI 工具快速创建新 demo
-- [待完成] 添加 demo 验证工具
-- [待完成] 实现文档预览功能
+- [ ] 实现 `useToggle.demo.vue`
+- [ ] 实现 `useCounter.demo.vue`
+- [ ] 实现 `useLocalStorage.demo.vue`
+- [ ] 扩展 ComponentMeta 支持 Hooks 参数和返回值
+- [ ] 集成到 vue-docs
 
-#### 3.4.2 自动化
+#### React Hooks (需先实现 hooks)
 
-- [待完成] 实现组件更新自动检测
-- [待完成] 添加文档生成 CI/CD
-- [待完成] 实现自动化测试覆盖
+- [ ] 实现 `useToggle` (React 版本)
+- [ ] 实现 `useCounter` (React 版本)
+- [ ] 实现 `useLocalStorage` (React 版本)
+- [ ] 创建对应的 demo 文件
+- [ ] 集成到 react-docs
 
-#### 3.4.3 分析和监控
+### 完成标准
 
-- [待完成] 实现文档使用统计
-- [待完成] 添加 demo 热度分析
-- [待完成] 提供优化建议
+- [ ] 所有 UI 组件至少有 2-3 个 demo
+- [ ] 所有 hooks 有使用示例
+- [ ] API 自动提取 100% 覆盖
+- [ ] react-docs 和 vue-docs 功能对等
 
 ---
 
-## 实施注意事项
+## 🎨 Stage 3: 功能增强
 
-### 开发优先级
+> **目标**: 完善文档应用功能，提升用户体验
 
-1. **先完成 Phase 1** - 确保基础架构稳定可用
-2. **Button 组件优先** - 作为概念验证的里程碑
-3. **渐进式实施** - 每个阶段都要有可用的交付物
+### 3.1 导航系统
+
+#### 组件树导航
+
+- [ ] 创建侧边栏布局组件
+- [ ] 实现组件分类 (UI 组件 / Hooks / 工具)
+- [ ] 支持多级菜单
+- [ ] 激活状态高亮
+- [ ] 移动端响应式菜单
+
+#### 搜索功能
+
+- [ ] 实现全局搜索框
+- [ ] 组件名称模糊搜索
+- [ ] API 名称搜索
+- [ ] 键盘快捷键 (Ctrl+K)
+- [ ] 搜索结果高亮
+
+#### 面包屑导航
+
+- [ ] 实现面包屑组件
+- [ ] 显示当前浏览路径
+- [ ] 支持快速回退
+
+### 3.2 交互功能
+
+#### 代码操作
+
+- [ ] 实现代码复制按钮
+- [ ] 添加复制成功提示
+- [ ] 支持一键复制所有代码
+- [ ] 代码行号显示
+
+#### Demo 预览
+
+- [ ] 全屏预览模式
+- [ ] 新窗口打开 demo
+- [ ] Demo 分屏显示 (代码 + 预览)
+- [ ] 设备切换预览 (桌面/平板/手机)
+
+#### 主题切换
+
+- [ ] 实现亮色/暗色主题
+- [ ] 主题切换动画
+- [ ] 记住用户偏好 (localStorage)
+
+### 3.3 性能优化
+
+#### 代码分割
+
+- [ ] Demo 组件懒加载
+- [ ] 路由级别代码分割
+- [ ] 预加载关键资源
+
+#### 加载优化
+
+- [ ] 添加骨架屏
+- [ ] 加载状态指示器
+- [ ] Demo 预加载策略
+- [ ] 图片优化和懒加载
+
+### 完成标准
+
+- [ ] 文档应用功能完整可用
+- [ ] 页面加载速度 < 2s
+- [ ] Lighthouse 性能评分 > 90
+- [ ] 移动端体验良好
+
+---
+
+## 🚀 Stage 4: 高级特性 (长期目标)
+
+### 4.1 Props Playground
+
+- [ ] 实现 Props 表格编辑器
+- [ ] 实时更新 demo 组件
+- [ ] 支持 string/number/boolean/select 编辑
+- [ ] URL 状态同步
+- [ ] 分享配置链接
+- [ ] 配置导入/导出
+- [ ] 历史记录功能
+
+### 4.2 API 版本管理
+
+- [ ] 实现组件 API 版本对比
+- [ ] 高亮显示 breaking changes
+- [ ] 自动生成变更日志
+- [ ] 迁移指南生成
+- [ ] 版本切换功能
+
+### 4.3 多框架扩展
+
+- [ ] 评估添加 Svelte 支持的成本
+- [ ] 设计通用插件接口
+- [ ] 实现 `docs-ui-svelte`
+- [ ] 添加 `svelte-docs` 应用
+
+### 4.4 开发者工具
+
+#### CLI 工具
+
+- [ ] `scx-docs add-demo <component>` - 快速创建 demo
+- [ ] `scx-docs generate <component>` - 生成组件文档
+- [ ] `scx-docs validate` - 验证 demo 格式
+- [ ] `scx-docs preview` - 本地预览文档
+
+#### 自动化
+
+- [ ] 组件更新自动检测
+- [ ] CI/CD 文档生成流程
+- [ ] 自动化测试覆盖
+- [ ] 文档使用统计
+
+---
+
+## 📋 实施注意事项
+
+### 开发流程
+
+1. **渐进式开发** - 完成一个组件再进行下一个
+2. **持续验证** - 每个 demo 完成后立即测试
+3. **文档同步** - 代码变更时同步更新文档
+4. **代码审查** - 关键功能需要 code review
 
 ### 技术约束
 
-- **严格遵守 DOC.md 的 4 条核心原则**
-- **保持 packages 的纯净性** - 绝不依赖 apps
-- **Demo 文件格式** - Vue 用 SFC，React 用 TSX
-- **类型安全** - 所有接口都要有完整的 TypeScript 类型
+- **Demo 文件格式** - Vue 用 `.demo.vue`，React 用 `.demo.tsx`
+- **导入路径** - Demo 必须从真实组件路径导入
+- **类型安全** - 所有 demo 必须通过 TypeScript 检查
+- **代码质量** - 通过 oxlint 和 prettier 检查
 
 ### 质量标准
 
-- **代码质量** - 通过 oxlint 和 prettier 检查
-- **类型检查** - 所有 TypeScript 代码无错误
-- **测试覆盖** - 核心功能需要单元测试
-- **文档同步** - 代码变更时同步更新文档
+- **零错误** - TypeScript 编译零错误
+- **可访问性** - 符合 WCAG 2.1 AA 标准
+- **响应式** - 支持桌面、平板、手机
+- **浏览器兼容** - Chrome, Firefox, Safari, Edge 最新版
 
 ### 发布策略
 
-- **内部测试** - 每个 Phase 完成后进行内部测试
+- **内部测试** - 每个 Stage 完成后进行内部测试
 - **逐步发布** - 按包逐步发布到 npm
 - **向后兼容** - 确保 API 的向后兼容性
-- **版本管理** - 遵循语义化版本控制
+- **版本管理** - 遵循语义化版本控制 (Semantic Versioning)
 
 ---
 
-## 成功指标
+## 🔗 相关文档
 
-### Phase 1 完成标准 (已达成)
+- [DOC.md](./DOC.md) - 文档系统架构设计
+- [CLAUDE.md](./CLAUDE.md) - 项目开发指南
+- [README.md](./README.md) - 项目介绍
 
-- [完成] 所有包结构创建完成 (doc-schema, docs-core, doc-utils, docs-ui-react, docs-ui-vue)
-- [待完成] Button demo 在 React 和 Vue 文档中正常展示 (推迟到 Phase 2)
-- [完成] API 元数据正确提取和显示 (doc-utils 包已实现相关工具)
-- [完成] 基础构建流程无错误 (所有包构建成功)
+---
 
-### Phase 2 完成标准
+## 📝 变更日志
 
-- [待完成] 所有现有组件都有完整的 demo
-- [待完成] API 自动生成 100% 覆盖
-- [待完成] 文档应用功能完整可用
-- [待完成] 性能指标达到预期
+### 2025-12-29
 
-### Phase 3 完成标准
+- 🔄 重新设计文档结构
+- ✅ 更新 Stage 0 完成状态
+- 📝 细化 Stage 1-4 任务清单
+- 📊 添加进度概览表
+- 💡 明确下一步行动 (Stage 1: Vue Button)
 
-- [待完成] Props Playground 功能完整
-- [待完成] 支持多框架组件文档
-- [待完成] 开发体验显著提升
-- [待完成] 社区反馈积极
+### 2025-12-27
 
-这个实施计划为 SCX Core 文档架构重构提供了清晰的路线图，确保项目能够按照 DOC.md 的设计理念稳步推进。
+- ✅ 完成 Stage 0 基础架构搭建
+- ✅ 创建所有核心包和文档应用
