@@ -89,12 +89,15 @@
 - [x] 添加 demo 元数据 (title, description)
 - [x] 创建 README 文档说明 demo 使用方式
 
-#### 1.2 集成到文档应用
+#### 1.2 集成到文档应用 ✅
 
-- [ ] 在 `apps/vue-docs/src/` 创建 `lib/registry.ts`
-- [ ] 使用 DocsRegistry 注册 Button 组件
-- [ ] 配置 demo 加载器
-- [ ] 配置 API 元数据提取器
+- [x] 在 `apps/vue-docs/src/` 创建 `lib/registry.ts`
+- [x] 使用 DocsRegistry 注册 Button 组件
+- [x] 配置 demo 加载器（使用 Vite import.meta.glob）
+- [x] 配置 API 元数据提取器（手动定义元数据）
+- [x] 在 main.ts 中初始化注册表
+- [x] 修复 TypeScript 配置和类型错误
+- [x] 构建验证通过
 
 #### 1.3 实现组件文档页面
 

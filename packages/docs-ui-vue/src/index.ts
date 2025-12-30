@@ -1,4 +1,4 @@
-import { App } from 'vue';
+import type { App } from 'vue';
 import DemoLayout from './DemoLayout.vue';
 import PropsTable from './PropsTable.vue';
 import EventsTable from './EventsTable.vue';
