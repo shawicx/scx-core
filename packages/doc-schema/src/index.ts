@@ -83,6 +83,10 @@ export interface DemoMeta {
   description?: string;
   /** Demo 标签 */
   tags?: string[];
+  /** Demo 唯一标识符 */
+  id?: string;
+  /** 是否为默认 demo */
+  isDefault?: boolean;
 }
 
 /**

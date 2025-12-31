@@ -99,12 +99,12 @@
 - [x] 修复 TypeScript 配置和类型错误
 - [x] 构建验证通过
 
-#### 1.3 实现组件文档页面
+#### 1.3 实现组件文档页面 ✅
 
-- [ ] 重写 `apps/vue-docs/src/pages/ComponentDocs.vue`
-- [ ] 集成 docs-ui-vue 组件 (DemoLayout, PropsTable)
-- [ ] 实现 demo 渲染逻辑
-- [ ] 实现 API 文档展示
+- [x] 重写 `apps/vue-docs/src/pages/ComponentDocs.vue`
+- [x] 集成 docs-ui-vue 组件 (DemoLayout, PropsTable)
+- [x] 实现 demo 渲染逻辑
+- [x] 实现 API 文档展示
 
 #### 1.4 端到端测试
 
