@@ -15,6 +15,11 @@ const router = createRouter({
   ],
 });
 
+// 处理路由错误，防止外部链接被拦截
+router.onError((error) => {
+  console.error('Router error:', error);
+});
+
 const app = createApp(App);
 
 app.use(router);

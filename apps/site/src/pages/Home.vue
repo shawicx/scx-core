@@ -24,19 +24,19 @@
         <h2 class="section-title">选择框架</h2>
         <p class="section-description">选择您偏好的框架查看组件文档</p>
         <div class="framework-cards">
-          <a href="/react-docs/" class="framework-card" target="_blank" rel="noopener noreferrer">
+          <div class="framework-card" @click="openReactDocs">
             <div class="framework-icon react">⚛️</div>
             <h3 class="framework-name">React</h3>
             <p class="framework-description">React 18+ 组件库文档</p>
             <div class="framework-link">查看文档 →</div>
-          </a>
+          </div>
 
-          <a href="/vue-docs/" class="framework-card" target="_blank" rel="noopener noreferrer">
+          <div class="framework-card" @click="openVueDocs">
             <div class="framework-icon vue">💚</div>
             <h3 class="framework-name">Vue</h3>
             <p class="framework-description">Vue 3.4+ 组件库文档</p>
             <div class="framework-link">查看文档 →</div>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -49,6 +49,26 @@
 </template>
 
 <script setup lang="ts">
+// 获取文档应用 URL，支持开发和生产环境
+const getDocsUrl = (app: 'react-docs' | 'vue-docs') => {
+  const isDev = import.meta.env.DEV;
+  if (isDev) {
+    // 开发环境：使用 localhost 和对应端口
+    return app === 'react-docs' ? 'http://localhost:4200/' : 'http://localhost:4100/';
+  } else {
+    // 生产环境：使用相对路径
+    return app === 'react-docs' ? '/react-docs/' : '/vue-docs/';
+  }
+};
+
+const openReactDocs = () => {
+  window.open(getDocsUrl('react-docs'), '_blank', 'noopener,noreferrer');
+};
+
+const openVueDocs = () => {
+  window.open(getDocsUrl('vue-docs'), '_blank', 'noopener,noreferrer');
+};
+
 const philosophies = [
   {
     icon: '🔧',
@@ -186,13 +206,14 @@ const philosophies = [
   border-radius: 1.5rem;
   padding: 3rem 2rem;
   border: 2px solid rgba(255, 255, 255, 0.3);
-  text-decoration: none;
   color: white;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .framework-card:hover {
