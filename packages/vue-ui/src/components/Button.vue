@@ -22,6 +22,12 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+// 定义组件名称
+// eslint-disable-next-line no-undef
+defineOptions({
+  name: 'Button',
+});
+
 interface Props {
   type?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'ghost';
   size?: 'small' | 'medium' | 'large';
