@@ -7,34 +7,32 @@
         <p class="subtitle">现代化的 React & Vue 组件库</p>
       </header>
 
-      <!-- Design Philosophy -->
-      <section class="philosophy">
-        <h2 class="section-title">设计理念</h2>
-        <div class="philosophy-cards">
-          <div class="card" v-for="item in philosophies" :key="item.title">
-            <div class="card-icon">{{ item.icon }}</div>
-            <h3 class="card-title">{{ item.title }}</h3>
-            <p class="card-description">{{ item.description }}</p>
+      <!-- Features -->
+      <section class="features">
+        <div class="feature-list">
+          <div class="feature-item" v-for="item in features" :key="item.title">
+            <div class="feature-content">
+              <h3 class="feature-title">{{ item.title }}</h3>
+              <p class="feature-desc">{{ item.description }}</p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Framework Selection -->
       <section class="frameworks">
-        <h2 class="section-title">选择框架</h2>
-        <p class="section-description">选择您偏好的框架查看组件文档</p>
+        <h2 class="section-title">组件文档</h2>
+        <p class="section-description">查看 React 和 Vue 组件库的详细文档</p>
         <div class="framework-cards">
           <div class="framework-card" @click="openReactDocs">
-            <div class="framework-icon react">⚛️</div>
             <h3 class="framework-name">React</h3>
-            <p class="framework-description">React 18+ 组件库文档</p>
+            <p class="framework-description">基于 React 18 的现代化组件库</p>
             <div class="framework-link">查看文档 →</div>
           </div>
 
           <div class="framework-card" @click="openVueDocs">
-            <div class="framework-icon vue">💚</div>
             <h3 class="framework-name">Vue</h3>
-            <p class="framework-description">Vue 3.4+ 组件库文档</p>
+            <p class="framework-description">基于 Vue 3.4 的现代化组件库</p>
             <div class="framework-link">查看文档 →</div>
           </div>
         </div>
@@ -69,26 +67,22 @@ const openVueDocs = () => {
   window.open(getDocsUrl('vue-docs'), '_blank', 'noopener,noreferrer');
 };
 
-const philosophies = [
+const features = [
   {
-    icon: '🔧',
     title: '类型安全',
-    description: '完整的 TypeScript 类型定义，提供优秀的开发体验和类型提示',
+    description: '完整的 TypeScript 支持',
   },
   {
-    icon: '🎨',
     title: '设计统一',
-    description: '跨框架共享统一的设计系统，保证视觉和交互的一致性',
+    description: '跨框架一致的设计系统',
   },
   {
-    icon: '⚡',
     title: '高性能',
-    description: '优化的组件实现和打包策略，确保最佳运行时性能',
+    description: '优化的组件实现',
   },
   {
-    icon: '📦',
     title: '按需加载',
-    description: '支持按需引入，最小化打包体积，提升加载速度',
+    description: '支持按需引入',
   },
 ];
 </script>
@@ -98,14 +92,14 @@ const philosophies = [
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: linear-gradient(180deg, #fef9f3 0%, #fff5eb 100%);
+  color: #2d3436;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem 2rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -113,100 +107,105 @@ const philosophies = [
 
 .header {
   text-align: center;
-  padding: 4rem 0;
+  padding: 3rem 0 3rem;
 }
 
 .title {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #ff8a5c 0%, #ff6b9d 50%, #c44569 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  opacity: 0.9;
+  font-size: 1.125rem;
+  color: #636e72;
+  font-weight: 400;
+}
+
+.features {
+  margin: 1rem 0 3rem;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 138, 92, 0.08);
+  transition: all 0.2s ease;
+}
+
+.feature-item:hover {
+  border-color: rgba(255, 138, 92, 0.2);
+  box-shadow: 0 4px 12px rgba(255, 138, 92, 0.08);
+}
+
+.feature-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.feature-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 0.125rem;
+}
+
+.feature-desc {
+  font-size: 0.8125rem;
+  color: #636e72;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.frameworks {
+  margin: 2rem 0;
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
-  margin: 3rem 0 1rem;
+  margin: 0 0 0.75rem;
+  color: #2d3436;
 }
 
 .section-description {
   text-align: center;
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 0.9375rem;
+  color: #636e72;
   margin-bottom: 2rem;
-}
-
-.philosophy {
-  margin: 2rem 0;
-}
-
-.philosophy-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-}
-
-.card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.card-description {
-  font-size: 1rem;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
-.frameworks {
-  margin: 4rem 0;
+  font-weight: 400;
 }
 
 .framework-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin: 2rem 0;
 }
 
 .framework-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 1.5rem;
-  padding: 3rem 2rem;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 138, 92, 0.15);
+  color: #2d3436;
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -217,64 +216,67 @@ const philosophies = [
 }
 
 .framework-card:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.framework-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(255, 138, 92, 0.18);
+  border-color: rgba(255, 138, 92, 0.3);
 }
 
 .framework-name {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 1.375rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #2d3436;
 }
 
 .framework-description {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: #636e72;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
 }
 
 .framework-link {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: 500;
   margin-top: auto;
-  padding: 0.75rem 2rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 2rem;
-  transition: background 0.3s ease;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, #ff8a5c 0%, #ff6b9d 100%);
+  color: white;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
 .framework-card:hover .framework-link {
-  background: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #ff7445 0%, #ff5a8f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 138, 92, 0.3);
 }
 
 .footer {
   text-align: center;
-  padding: 2rem;
-  opacity: 0.8;
+  padding: 2rem 0 1rem;
+  color: #636e72;
+  font-size: 0.8125rem;
   margin-top: auto;
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+
   .title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
-  .section-title {
-    font-size: 2rem;
+  .feature-list {
+    grid-template-columns: 1fr;
   }
 
-  .philosophy-cards,
   .framework-cards {
     grid-template-columns: 1fr;
   }

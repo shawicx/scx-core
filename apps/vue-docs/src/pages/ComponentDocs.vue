@@ -3,14 +3,14 @@
     <!-- Loading State -->
     <div v-if="loading" class="loading">
       <div class="spinner"></div>
-      <p>Loading component documentation...</p>
+      <p>正在加载组件文档...</p>
     </div>
 
     <!-- Error State -->
     <div v-else-if="error" class="error">
-      <h2>Component Not Found</h2>
+      <h2>未找到组件</h2>
       <p>{{ error }}</p>
-      <RouterLink to="/" class="back-link">← Back to Home</RouterLink>
+      <RouterLink to="/" class="back-link">← 返回首页</RouterLink>
     </div>
 
     <!-- Documentation Content -->
@@ -18,8 +18,8 @@
       <!-- Header -->
       <header class="header">
         <div class="header-content">
-          <RouterLink to="/" class="back-link">← Back to Home</RouterLink>
-          <h1 class="title">{{ componentData.name }} Component</h1>
+          <RouterLink to="/" class="back-link">← 返回首页</RouterLink>
+          <h1 class="title">{{ componentData.name }} 组件</h1>
           <p v-if="componentData.category" class="category">
             {{ componentData.category }}
           </p>
@@ -29,12 +29,12 @@
       <main class="main">
         <!-- Usage Section -->
         <section class="section">
-          <h2 class="section-title">Usage</h2>
+          <h2 class="section-title">使用方法</h2>
           <div class="code-block">
             <div class="code-header">
               <span>typescript</span>
-              <button class="copy-btn" @click="copyCode(importCode)" title="Copy code">
-                {{ copied ? '✓ Copied' : '📋 Copy' }}
+              <button class="copy-btn" @click="copyCode(importCode)" title="复制代码">
+                {{ copied ? '✓ 已复制' : '📋 复制' }}
               </button>
             </div>
             <pre><code>{{ importCode }}</code></pre>
@@ -43,7 +43,7 @@
 
         <!-- Demos Section -->
         <section v-if="demos.length > 0" class="section">
-          <h2 class="section-title">Examples</h2>
+          <h2 class="section-title">示例</h2>
           <div v-for="(demo, index) in demos" :key="demo.id" class="demo-item">
             <DemoLayout :title="demo.title" :description="demo.description">
               <component :is="getDemoComponent(demo.id)" />
@@ -57,7 +57,7 @@
 
           <!-- Props -->
           <div v-if="componentMeta.props && componentMeta.props.length > 0" class="api-subsection">
-            <h3 class="subsection-title">Props</h3>
+            <h3 class="subsection-title">属性</h3>
             <PropsTable :meta="componentMeta" />
           </div>
 
@@ -66,13 +66,13 @@
             v-if="componentMeta.events && componentMeta.events.length > 0"
             class="api-subsection"
           >
-            <h3 class="subsection-title">Events</h3>
+            <h3 class="subsection-title">事件</h3>
             <EventsTable :events="componentMeta.events" />
           </div>
 
           <!-- Slots -->
           <div v-if="componentMeta.slots && componentMeta.slots.length > 0" class="api-subsection">
-            <h3 class="subsection-title">Slots</h3>
+            <h3 class="subsection-title">插槽</h3>
             <SlotsTable :slots="componentMeta.slots" />
           </div>
         </section>
@@ -193,7 +193,7 @@ onMounted(() => {
 <style scoped>
 .component-docs {
   min-height: 100vh;
-  background: #f7fafc;
+  background: linear-gradient(180deg, #fef9f3 0%, #fff5eb 100%);
 }
 
 /* Loading State */
@@ -203,14 +203,14 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   min-height: 50vh;
-  color: #718096;
+  color: #636e72;
 }
 
 .spinner {
   width: 40px;
   height: 40px;
-  border: 4px solid #e2e8f0;
-  border-top-color: #667eea;
+  border: 4px solid rgba(255, 138, 92, 0.1);
+  border-top-color: #ff8a5c;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   margin-bottom: 1rem;
@@ -228,9 +228,9 @@ onMounted(() => {
   margin: 4rem auto;
   padding: 2rem;
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 138, 92, 0.08);
 }
 
 .error h2 {
@@ -239,16 +239,16 @@ onMounted(() => {
 }
 
 .error p {
-  color: #718096;
+  color: #636e72;
   margin-bottom: 1.5rem;
 }
 
 /* Header */
 .header {
   background: white;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(255, 138, 92, 0.1);
   padding: 1.5rem 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(255, 138, 92, 0.05);
 }
 
 .header-content {
@@ -258,7 +258,7 @@ onMounted(() => {
 
 .back-link {
   display: inline-block;
-  color: #667eea;
+  color: #ff8a5c;
   text-decoration: none;
   font-weight: 500;
   margin-bottom: 1rem;
@@ -266,18 +266,18 @@ onMounted(() => {
 }
 
 .back-link:hover {
-  color: #764ba2;
+  color: #ff6b9d;
 }
 
 .title {
   font-size: 2rem;
-  font-weight: 700;
-  color: #1a202c;
+  font-weight: 600;
+  color: #2d3436;
   margin: 0;
 }
 
 .category {
-  color: #718096;
+  color: #636e72;
   font-size: 0.875rem;
   margin-top: 0.5rem;
 }
@@ -291,25 +291,25 @@ onMounted(() => {
 
 .section {
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 138, 92, 0.08);
 }
 
 .section-title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #2d3748;
-  border-bottom: 2px solid #e2e8f0;
+  color: #2d3436;
+  border-bottom: 2px solid rgba(255, 138, 92, 0.1);
   padding-bottom: 0.5rem;
 }
 
 /* Code Block */
 .code-block {
   background: #1a202c;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   margin-top: 1rem;
 }
@@ -378,6 +378,6 @@ onMounted(() => {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #2d3748;
+  color: #2d3436;
 }
 </style>
