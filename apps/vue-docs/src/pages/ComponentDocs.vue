@@ -91,6 +91,19 @@ import type { ComponentMeta } from '@scxfe/doc-schema';
 const route = useRoute();
 const componentName = (route.params.name as string) || '';
 
+/**
+ * 将 kebab-case 转换为 PascalCase
+ * 例如: a-map -> AMap, button -> Button
+ */
+function kebabToPascalCase(str: string): string {
+  return str
+    .split('-')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
+}
+
+const pascalName = kebabToPascalCase(componentName);
+
 // State
 const loading = ref(true);
 const error = ref<string | null>(null);
@@ -104,8 +117,7 @@ const demoComponents = shallowRef<Record<string, any>>({});
 
 // Computed
 const importCode = computed(() => {
-  const name = componentName.charAt(0).toUpperCase() + componentName.slice(1);
-  return `import { ${name} } from '@scxfe/vue-ui';`;
+  return `import { ${pascalName} } from '@scxfe/vue-ui';`;
 });
 
 // Methods
@@ -114,22 +126,22 @@ async function loadComponentData() {
   error.value = null;
 
   try {
-    // Get component from registry
-    const component = registry.getComponent(componentName);
+    // Get component from registry using PascalCase name
+    const component = registry.getComponent(pascalName);
 
     if (!component) {
-      error.value = `Component "${componentName}" is not registered in the docs system.`;
+      error.value = `Component "${pascalName}" is not registered in the docs system.`;
       return;
     }
 
     componentData.value = component.config;
 
     // Get component meta
-    const meta = await registry.getComponentMeta(componentName);
+    const meta = await registry.getComponentMeta(pascalName);
     componentMeta.value = meta;
 
     // Get component demos
-    const demoList = registry.getComponentDemos(componentName);
+    const demoList = registry.getComponentDemos(pascalName);
     demos.value = demoList;
 
     // Load demo components
@@ -181,7 +193,7 @@ async function copyCode(code: string) {
 
 // Lifecycle
 onMounted(() => {
-  if (componentName) {
+  if (pascalName) {
     loadComponentData();
   } else {
     error.value = 'No component specified';

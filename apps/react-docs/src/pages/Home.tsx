@@ -18,19 +18,24 @@ function Home() {
         <section className="components">
           <h2>组件列表</h2>
           <div className="component-list">
-            <Link to="/components/button" className="component-item">
-              <h3>Button 按钮</h3>
-              <p>功能多样的按钮组件，支持多种样式</p>
+            <Link to="/components/a-map" className="component-item">
+              <h3>AMap 高德地图</h3>
+              <p>集成高德地图的 React 组件</p>
+            </Link>
+
+            <Link to="/components/caption" className="component-item">
+              <h3>Caption 标题</h3>
+              <p>带有装饰性背景条的标题组件</p>
             </Link>
 
             <Link to="/components/card" className="component-item">
               <h3>Card 卡片</h3>
-              <p>灵活的内容组织卡片组件</p>
+              <p>基础卡片组件</p>
             </Link>
 
-            <Link to="/components/counter" className="component-item">
-              <h3>Counter 计数器</h3>
-              <p>简单的计数器组件演示</p>
+            <Link to="/components/gradient-border" className="component-item">
+              <h3>GradientBorder 渐变边框</h3>
+              <p>带有渐变边框的容器组件</p>
             </Link>
           </div>
         </section>

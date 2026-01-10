@@ -32,6 +32,122 @@ const loadButtonDemos = async () => {
   });
 };
 
+// 导入 Card 组件的 API 元数据
+function getCardMeta(): ComponentMeta {
+  return {
+    name: 'Card',
+    props: [
+      {
+        name: 'title',
+        type: { name: 'string' },
+        required: false,
+        default: "''",
+        description: '卡片标题',
+      },
+      {
+        name: 'shadow',
+        type: { name: 'always | hover | never', raw: "'always' | 'hover' | 'never'" },
+        required: false,
+        default: 'always',
+        description: '卡片阴影显示方式',
+      },
+      {
+        name: 'bordered',
+        type: { name: 'boolean' },
+        required: false,
+        default: 'true',
+        description: '是否有边框',
+      },
+      {
+        name: 'size',
+        type: { name: 'small | medium | large', raw: "'small' | 'medium' | 'large'" },
+        required: false,
+        default: 'medium',
+        description: '卡片尺寸',
+      },
+    ],
+    events: [],
+    slots: [
+      { name: 'header', description: '卡片头部插槽' },
+      { name: 'cover', description: '卡片封面插槽' },
+      { name: 'default', description: '卡片内容插槽' },
+      { name: 'actions', description: '卡片操作区插槽' },
+    ],
+  };
+}
+
+// 导入 Counter 组件的 API 元数据
+function getCounterMeta(): ComponentMeta {
+  return {
+    name: 'Counter',
+    props: [
+      {
+        name: 'modelValue',
+        type: { name: 'number' },
+        required: false,
+        default: '0',
+        description: '当前数值',
+      },
+      {
+        name: 'min',
+        type: { name: 'number' },
+        required: false,
+        default: '0',
+        description: '最小值',
+      },
+      {
+        name: 'max',
+        type: { name: 'number' },
+        required: false,
+        default: '100',
+        description: '最大值',
+      },
+      {
+        name: 'step',
+        type: { name: 'number' },
+        required: false,
+        default: '1',
+        description: '步长',
+      },
+      {
+        name: 'label',
+        type: { name: 'string' },
+        required: false,
+        default: "''",
+        description: '标签文本',
+      },
+      {
+        name: 'editable',
+        type: { name: 'boolean' },
+        required: false,
+        default: 'false',
+        description: '是否可编辑',
+      },
+      {
+        name: 'size',
+        type: { name: 'small | medium | large', raw: "'small' | 'medium' | 'large'" },
+        required: false,
+        default: 'medium',
+        description: '计数器尺寸',
+      },
+      {
+        name: 'disabled',
+        type: { name: 'boolean' },
+        required: false,
+        default: 'false',
+        description: '是否禁用',
+      },
+    ],
+    events: [
+      { name: 'update:modelValue', description: '数值更新时触发' },
+      { name: 'change', description: '数值改变时触发' },
+      { name: 'decrement', description: '减少按钮点击时触发' },
+      { name: 'increment', description: '增加按钮点击时触发' },
+    ],
+    slots: [],
+  };
+}
+
 /**
  * Button 组件的 API 元数据
  */
@@ -124,9 +240,43 @@ export async function initializeRegistry() {
     console.error('❌ Failed to register Button component:', error);
   }
 
-  // 未来可以在这里注册更多组件
-  // await registerCard();
-  // await registerCounter();
+  // 注册 Card 组件
+  try {
+    const cardMeta = getCardMeta();
+
+    registry.registerComponent({
+      name: 'Card',
+      meta: cardMeta,
+      demos: [],
+      category: 'UI 组件',
+      path: '/card',
+    });
+
+    // eslint-disable-next-line no-console
+    console.log('✅ Card component registered successfully');
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('❌ Failed to register Card component:', error);
+  }
+
+  // 注册 Counter 组件
+  try {
+    const counterMeta = getCounterMeta();
+
+    registry.registerComponent({
+      name: 'Counter',
+      meta: counterMeta,
+      demos: [],
+      category: 'UI 组件',
+      path: '/counter',
+    });
+
+    // eslint-disable-next-line no-console
+    console.log('✅ Counter component registered successfully');
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('❌ Failed to register Counter component:', error);
+  }
 }
 
 /**

@@ -34,9 +34,9 @@ interface Component {
 }
 
 const components: Component[] = [
-  { name: 'Button', displayName: 'Button 按钮', description: '可点击的按钮组件' },
-  { name: 'Input', displayName: 'Input 输入框', description: '文本输入框组件' },
-  { name: 'Modal', displayName: 'Modal 模态框', description: '模态对话框组件' },
+  { name: 'Button', displayName: 'Button 按钮', description: '功能多样的按钮组件，支持多种样式' },
+  { name: 'Card', displayName: 'Card 卡片', description: '灵活的内容组织卡片组件' },
+  { name: 'Counter', displayName: 'Counter 计数器', description: '简单的计数器组件，支持增减操作' },
 ];
 </script>
 
