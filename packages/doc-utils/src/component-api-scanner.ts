@@ -80,8 +80,9 @@ export class ComponentApiScanner {
     try {
       // 猜测框架类型
       const isVue = fileName?.endsWith('.vue');
-      const isReact = fileName ? /\.(tsx|jsx|ts|js)$/.test(fileName) :
-                     source.includes('export') || source.includes('React') || source.includes('jsx');
+      const isReact = fileName
+        ? /\.(tsx|jsx|ts|js)$/.test(fileName)
+        : source.includes('export') || source.includes('React') || source.includes('jsx');
 
       if (isVue) {
         return await this.vueExtractor.extractFromSource(source, fileName);
@@ -171,11 +172,13 @@ export class ComponentApiScanner {
     const fileName = filePath.toLowerCase();
 
     // 排除测试文件和文档文件
-    if (fileName.includes('.test.') ||
-        fileName.includes('.spec.') ||
-        fileName.includes('.stories.') ||
-        fileName.endsWith('.d.ts') ||
-        fileName.includes('node_modules')) {
+    if (
+      fileName.includes('.test.') ||
+      fileName.includes('.spec.') ||
+      fileName.includes('.stories.') ||
+      fileName.endsWith('.d.ts') ||
+      fileName.includes('node_modules')
+    ) {
       return false;
     }
 
@@ -225,7 +228,7 @@ export function createDefaultFileFilter(): (filePath: string) => boolean {
   ];
 
   return (filePath: string) => {
-    return !excludedPatterns.some(pattern => pattern.test(filePath));
+    return !excludedPatterns.some((pattern) => pattern.test(filePath));
   };
 }
 
@@ -247,7 +250,10 @@ export async function extractComponentApi(filePath: string): Promise<ComponentMe
 /**
  * 便捷函数：扫描目录中的所有组件 API
  */
-export async function scanComponentApis(dirPath: string, options?: ScannerOptions): Promise<ComponentMeta[]> {
+export async function scanComponentApis(
+  dirPath: string,
+  options?: ScannerOptions,
+): Promise<ComponentMeta[]> {
   const scanner = createComponentApiScanner();
   const fileFilter = options?.fileFilter || createDefaultFileFilter();
   return scanner.scanDirectory(dirPath, { ...options, fileFilter });

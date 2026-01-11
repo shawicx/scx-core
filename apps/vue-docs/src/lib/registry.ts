@@ -7,18 +7,62 @@
 import { DocsRegistry } from '@scxfe/docs-core';
 import type { ComponentMeta } from '@scxfe/doc-schema';
 
-// 导入 Button 组件的 demos
-const loadButtonDemos = async () => {
-  const modules = import.meta.glob('@scxfe/vue-ui/components/demos/*.vue', {
+// 导入 Card 组件的 demos
+const loadCardDemos = async () => {
+  const modules = import.meta.glob('@scxfe/vue-ui/components/demos/Card*.vue', {
     eager: true,
   });
 
   return Object.entries(modules).map(([path, module]: [string, any]) => {
-    // 从文件路径提取 demo 名称
+    const fileName = path.split('/').pop()?.replace('.vue', '') || '';
+    const demoName = fileName.replace('Card', '').replace('.demo', '');
+
+    const component = (module as any).default;
+    const title = component?.title || demoName || 'Demo';
+    const description = component?.description || `Card ${demoName} demo`;
+
+    return {
+      title,
+      description,
+      component: () => component,
+      tags: ['card', demoName.toLowerCase()].filter(Boolean),
+    };
+  });
+};
+
+// 导入 Counter 组件的 demos
+const loadCounterDemos = async () => {
+  const modules = import.meta.glob('@scxfe/vue-ui/components/demos/Counter*.vue', {
+    eager: true,
+  });
+
+  return Object.entries(modules).map(([path, module]: [string, any]) => {
+    const fileName = path.split('/').pop()?.replace('.vue', '') || '';
+    const demoName = fileName.replace('Counter', '').replace('.demo', '');
+
+    const component = (module as any).default;
+    const title = component?.title || demoName || 'Demo';
+    const description = component?.description || `Counter ${demoName} demo`;
+
+    return {
+      title,
+      description,
+      component: () => component,
+      tags: ['counter', demoName.toLowerCase()].filter(Boolean),
+    };
+  });
+};
+
+// 导入 Button 组件的 demos
+const loadButtonDemos = async () => {
+  const modules = import.meta.glob('@scxfe/vue-ui/components/demos/Button*.vue', {
+    eager: true,
+  });
+
+  return Object.entries(modules).map(([path, module]: [string, any]) => {
     const fileName = path.split('/').pop()?.replace('.vue', '') || '';
     const demoName = fileName.replace('Button', '').replace('.demo', '');
 
-    // 从 demo 组件中提取元数据（如果组件导出了）
     const component = (module as any).default;
     const title = component?.title || demoName || 'Demo';
     const description = component?.description || `Button ${demoName} demo`;
@@ -28,6 +72,75 @@ const loadButtonDemos = async () => {
       description,
       component: () => component,
       tags: ['button', demoName.toLowerCase()].filter(Boolean),
+    };
+  });
+};
+
+// 导入 useCounter hook 的 demos
+const loadUseCounterDemos = async () => {
+  const modules = import.meta.glob('@scxfe/vue-hooks/useCounter/demos/*.vue', {
+    eager: true,
+  });
+
+  return Object.entries(modules).map(([path, module]: [string, any]) => {
+    const fileName = path.split('/').pop()?.replace('.vue', '') || '';
+    const demoName = fileName.replace('useCounter', '').replace('.demo', '');
+
+    const component = (module as any).default;
+    const title = component?.title || demoName || 'Demo';
+    const description = component?.description || `useCounter ${demoName} demo`;
+
+    return {
+      title,
+      description,
+      component: () => component,
+      tags: ['hook', 'usecounter', demoName.toLowerCase()].filter(Boolean),
+    };
+  });
+};
+
+// 导入 useToggle hook 的 demos
+const loadUseToggleDemos = async () => {
+  const modules = import.meta.glob('@scxfe/vue-hooks/useToggle/demos/*.vue', {
+    eager: true,
+  });
+
+  return Object.entries(modules).map(([path, module]: [string, any]) => {
+    const fileName = path.split('/').pop()?.replace('.vue', '') || '';
+    const demoName = fileName.replace('useToggle', '').replace('.demo', '');
+
+    const component = (module as any).default;
+    const title = component?.title || demoName || 'Demo';
+    const description = component?.description || `useToggle ${demoName} demo`;
+
+    return {
+      title,
+      description,
+      component: () => component,
+      tags: ['hook', 'usetoggle', demoName.toLowerCase()].filter(Boolean),
+    };
+  });
+};
+
+// 导入 useLocalStorage hook 的 demos
+const loadUseLocalStorageDemos = async () => {
+  const modules = import.meta.glob('@scxfe/vue-hooks/useLocalStorage/demos/*.vue', {
+    eager: true,
+  });
+
+  return Object.entries(modules).map(([path, module]: [string, any]) => {
+    const fileName = path.split('/').pop()?.replace('.vue', '') || '';
+    const demoName = fileName.replace('useLocalStorage', '').replace('.demo', '');
+
+    const component = (module as any).default;
+    const title = component?.title || demoName || 'Demo';
+    const description = component?.description || `useLocalStorage ${demoName} demo`;
+
+    return {
+      title,
+      description,
+      component: () => component,
+      tags: ['hook', 'uselocalstorage', demoName.toLowerCase()].filter(Boolean),
     };
   });
 };
@@ -243,17 +356,22 @@ export async function initializeRegistry() {
   // 注册 Card 组件
   try {
     const cardMeta = getCardMeta();
+    const cardDemos = await loadCardDemos();
 
     registry.registerComponent({
       name: 'Card',
       meta: cardMeta,
-      demos: [],
+      demos: cardDemos,
       category: 'UI 组件',
       path: '/card',
     });
 
     // eslint-disable-next-line no-console
     console.log('✅ Card component registered successfully');
+    // eslint-disable-next-line no-console
+    console.log(`   - ${cardDemos.length} demos loaded`);
+    // eslint-disable-next-line no-console
+    console.log('   - Demos:', cardDemos.map((d) => d.title).join(', '));
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('❌ Failed to register Card component:', error);
@@ -262,20 +380,145 @@ export async function initializeRegistry() {
   // 注册 Counter 组件
   try {
     const counterMeta = getCounterMeta();
+    const counterDemos = await loadCounterDemos();
 
     registry.registerComponent({
       name: 'Counter',
       meta: counterMeta,
-      demos: [],
+      demos: counterDemos,
       category: 'UI 组件',
       path: '/counter',
     });
 
     // eslint-disable-next-line no-console
     console.log('✅ Counter component registered successfully');
+    // eslint-disable-next-line no-console
+    console.log(`   - ${counterDemos.length} demos loaded`);
+    // eslint-disable-next-line no-console
+    console.log('   - Demos:', counterDemos.map((d) => d.title).join(', '));
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('❌ Failed to register Counter component:', error);
+  }
+
+  // 注册 useCounter hook
+  try {
+    const useCounterDemos = await loadUseCounterDemos();
+
+    registry.registerComponent({
+      name: 'useCounter',
+      meta: {
+        name: 'useCounter',
+        props: [
+          {
+            name: 'options',
+            type: { name: 'UseCounterOptions' },
+            required: false,
+            default: '{}',
+            description: '计数器配置选项',
+          },
+        ],
+        events: [],
+        slots: [],
+      },
+      demos: useCounterDemos,
+      category: 'Hooks',
+      path: '/use-counter',
+    });
+
+    // eslint-disable-next-line no-console
+    console.log('✅ useCounter hook registered successfully');
+    // eslint-disable-next-line no-console
+    console.log(`   - ${useCounterDemos.length} demos loaded`);
+    // eslint-disable-next-line no-console
+    console.log('   - Demos:', useCounterDemos.map((d) => d.title).join(', '));
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('❌ Failed to register useCounter hook:', error);
+  }
+
+  // 注册 useToggle hook
+  try {
+    const useToggleDemos = await loadUseToggleDemos();
+
+    registry.registerComponent({
+      name: 'useToggle',
+      meta: {
+        name: 'useToggle',
+        props: [
+          {
+            name: 'options',
+            type: { name: 'UseToggleOptions' },
+            required: false,
+            default: '{}',
+            description: '切换配置选项',
+          },
+        ],
+        events: [],
+        slots: [],
+      },
+      demos: useToggleDemos,
+      category: 'Hooks',
+      path: '/use-toggle',
+    });
+
+    // eslint-disable-next-line no-console
+    console.log('✅ useToggle hook registered successfully');
+    // eslint-disable-next-line no-console
+    console.log(`   - ${useToggleDemos.length} demos loaded`);
+    // eslint-disable-next-line no-console
+    console.log('   - Demos:', useToggleDemos.map((d) => d.title).join(', '));
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('❌ Failed to register useToggle hook:', error);
+  }
+
+  // 注册 useLocalStorage hook
+  try {
+    const useLocalStorageDemos = await loadUseLocalStorageDemos();
+
+    registry.registerComponent({
+      name: 'useLocalStorage',
+      meta: {
+        name: 'useLocalStorage',
+        props: [
+          {
+            name: 'key',
+            type: { name: 'string' },
+            required: true,
+            description: 'localStorage 键名',
+          },
+          {
+            name: 'initialValue',
+            type: { name: 'T' },
+            required: true,
+            description: '初始值',
+          },
+          {
+            name: 'options',
+            type: { name: 'UseLocalStorageOptions' },
+            required: false,
+            default: '{}',
+            description: 'localStorage 配置选项',
+          },
+        ],
+        events: [],
+        slots: [],
+      },
+      demos: useLocalStorageDemos,
+      category: 'Hooks',
+      path: '/use-local-storage',
+    });
+
+    // eslint-disable-next-line no-console
+    console.log('✅ useLocalStorage hook registered successfully');
+    // eslint-disable-next-line no-console
+    console.log(`   - ${useLocalStorageDemos.length} demos loaded`);
+    // eslint-disable-next-line no-console
+    console.log('   - Demos:', useLocalStorageDemos.map((d) => d.title).join(', '));
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('❌ Failed to register useLocalStorage hook:', error);
   }
 }
 

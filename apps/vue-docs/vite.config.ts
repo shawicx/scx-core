@@ -13,6 +13,7 @@ export default defineConfig({
       '@scxfe/docs-core': resolve(__dirname, '../../packages/docs-core/src'),
       '@scxfe/docs-ui-vue': resolve(__dirname, '../../packages/docs-ui-vue/src'),
       '@scxfe/vue-ui': resolve(__dirname, '../../packages/vue-ui/src'),
+      '@scxfe/vue-hooks': resolve(__dirname, '../../packages/vue-hooks/src'),
     },
   },
   server: {

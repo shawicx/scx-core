@@ -59,7 +59,7 @@ export class ReactApiExtractor extends ComponentApiExtractor {
   private async initializeParser() {
     try {
       this.reactDocgen = await import('react-docgen-typescript');
-    } catch (error) {
+    } catch {
       console.warn('react-docgen-typescript not available, React API extraction will be limited');
     }
   }
@@ -103,10 +103,12 @@ export class ReactApiExtractor extends ComponentApiExtractor {
   }
 
   isSupported(filePath: string): boolean {
-    return /\.(tsx|jsx|ts|js)$/.test(filePath) &&
-           !filePath.includes('.d.ts') &&
-           !filePath.includes('.test.') &&
-           !filePath.includes('.spec.');
+    return (
+      /\.(tsx|jsx|ts|js)$/.test(filePath) &&
+      !filePath.includes('.d.ts') &&
+      !filePath.includes('.test.') &&
+      !filePath.includes('.spec.')
+    );
   }
 
   /**
@@ -147,9 +149,7 @@ export class ReactApiExtractor extends ComponentApiExtractor {
 
     Object.entries(doc.props).forEach(([propName, propDef]) => {
       // React 事件通常以 on 开头且类型为函数
-      if (propName.startsWith('on') &&
-          propDef.type.name === 'function' &&
-          propDef.description) {
+      if (propName.startsWith('on') && propDef.type.name === 'function' && propDef.description) {
         events.push({
           name: propName,
           description: propDef.description,
@@ -183,9 +183,11 @@ export class ReactApiExtractor extends ComponentApiExtractor {
 
     // 检查其他可能的插槽属性（如 render props）
     Object.entries(doc.props).forEach(([propName, propDef]) => {
-      if (propName.includes('render') &&
-          propDef.type.name === 'function' &&
-          !propName.startsWith('on')) {
+      if (
+        propName.includes('render') &&
+        propDef.type.name === 'function' &&
+        !propName.startsWith('on')
+      ) {
         slots.push({
           name: propName,
           description: propDef.description || `Render prop for ${propName}`,

@@ -18,6 +18,14 @@
   "sideEffects": false,
   "main": "./lib/index.js",
   "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./lib/index.js"
+    },
+    "./src/*": "./src/*"
+  },
   "scripts": {
     "build": "tsup",
     "lint": "oxlint . --config ../../oxlint.json",

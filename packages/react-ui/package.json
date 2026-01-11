@@ -32,7 +32,8 @@
   },
   "dependencies": {
     "@scxfe/util": "workspace:^",
-    "ahooks": "^3.8.0"
+    "ahooks": "^3.8.0",
+    "classnames": "^2.5.1"
   },
   "devDependencies": {
     "@amap/amap-jsapi-types": "^0.0.15",

@@ -13,6 +13,7 @@ export default defineConfig({
       '@scxfe/docs-core': path.resolve(__dirname, '../../packages/docs-core/src'),
       '@scxfe/docs-ui-react': path.resolve(__dirname, '../../packages/docs-ui-react/src'),
       '@scxfe/react-ui': path.resolve(__dirname, '../../packages/react-ui/src'),
+      '@scxfe/react-hooks': path.resolve(__dirname, '../../packages/react-hooks/src'),
     },
   },
   server: {

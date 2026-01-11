@@ -80,7 +80,7 @@ export class VueApiExtractor extends ComponentApiExtractor {
   private async initializeParser() {
     try {
       this.vueDocgen = await import('vue-docgen-api');
-    } catch (error) {
+    } catch {
       console.warn('vue-docgen-api not available, Vue API extraction will be limited');
     }
   }
@@ -163,10 +163,12 @@ export class VueApiExtractor extends ComponentApiExtractor {
     return Object.entries(eventsDoc).map(([eventName, eventDef]) => ({
       name: eventName,
       description: eventDef.description,
-      payload: eventDef.payload?.type ? {
-        name: eventDef.payload.type.name,
-        raw: eventDef.payload.type.names?.join(' | ') || eventDef.payload.type.name,
-      } : undefined,
+      payload: eventDef.payload?.type
+        ? {
+            name: eventDef.payload.type.name,
+            raw: eventDef.payload.type.names?.join(' | ') || eventDef.payload.type.name,
+          }
+        : undefined,
     }));
   }
 
@@ -178,10 +180,12 @@ export class VueApiExtractor extends ComponentApiExtractor {
     return Object.entries(slotsDoc).map(([slotName, slotDef]) => ({
       name: slotName,
       description: slotDef.description,
-      props: slotDef.props ? Object.entries(slotDef.props).reduce((acc, [propName, prop]) => {
-        acc[propName] = this.resolveVueType(prop.type);
-        return acc;
-      }, {} as any) : undefined,
+      props: slotDef.props
+        ? Object.entries(slotDef.props).reduce((acc, [propName, prop]) => {
+            acc[propName] = this.resolveVueType(prop.type);
+            return acc;
+          }, {} as any)
+        : undefined,
     }));
   }
 
