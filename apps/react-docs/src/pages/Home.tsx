@@ -18,6 +18,11 @@ function Home() {
         <section className="components">
           <h2>组件列表</h2>
           <div className="component-list">
+            <Link to="/preview-example" className="component-item">
+              <h3>预览容器示例</h3>
+              <p>文档预览容器组件的使用示例</p>
+            </Link>
+
             <Link to="/components/a-map" className="component-item">
               <h3>AMap 高德地图</h3>
               <p>集成高德地图的 React 组件</p>

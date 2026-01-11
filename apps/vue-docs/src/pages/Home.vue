@@ -34,6 +34,11 @@ interface Component {
 }
 
 const components: Component[] = [
+  {
+    name: 'preview-example',
+    displayName: '预览容器示例',
+    description: '文档预览容器组件的使用示例',
+  },
   { name: 'Button', displayName: 'Button 按钮', description: '功能多样的按钮组件，支持多种样式' },
   { name: 'Card', displayName: 'Card 卡片', description: '灵活的内容组织卡片组件' },
   { name: 'Counter', displayName: 'Counter 计数器', description: '简单的计数器组件，支持增减操作' },

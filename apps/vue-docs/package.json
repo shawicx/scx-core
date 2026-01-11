@@ -15,6 +15,7 @@
     "@scxfe/doc-schema": "workspace:^",
     "@scxfe/doc-utils": "workspace:^",
     "@scxfe/docs-core": "workspace:^",
+    "@scxfe/docs-preview-vue": "workspace:^",
     "@scxfe/docs-ui-vue": "workspace:^",
     "@scxfe/vue-ui": "workspace:^",
     "vue": "^3.4.21",

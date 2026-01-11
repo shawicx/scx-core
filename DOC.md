@@ -1,287 +1,500 @@
-## 一、最终设计目标
+# SCX Core 文档架构设计
 
-在进入结构之前，先把**不可违背的原则**写清楚，这能防止半年后自己打脸。
+> 最后更新：2026-01-11
 
-### 核心目标
+## 一、核心原则
 
-1. **Demo 必须是真实运行时代码**
-   - 无 DSL
-   - 无字符串模板
-   - 与用户使用方式一致
-
-2. **文档系统与组件系统彻底解耦**
-   - packages 永不依赖 apps
-   - demo 不污染组件本体
-
-3. **React / Vue 不强行统一运行时**
-   - 统一“语义模型”
-   - 不统一“实现模型”
-
-4. **80% 跨框架共享，20% 框架特化**
-   - schema / 数据结构统一
-   - UI 层分 React / Vue
-
-这四条是整套规划的“物理定律”。
+1. **Demo 必须是真实运行时代码** - 无 DSL，无字符串模板
+2. **文档系统与组件系统彻底解耦** - packages 永不依赖 apps
+3. **React / Vue 不强行统一运行时** - 统一"语义模型"，不统一"实现模型"
+4. **80% 跨框架共享，20% 框架特化** - schema 统一，UI 分离
+5. **容器化展示，页面化文档** - 统一预览容器，文档即页面
 
 ---
 
-## 二、最终 Turborepo 目录结构
-
-这是**修复所有问题后的最终结构**。
+## 二、目录结构
 
 ```txt
 repo/
 ├─ apps/
 │  ├─ react-docs/                    # React 文档应用
-│  │  ├─ src/
-│  │  │  ├─ pages/
-│  │  │  ├─ router.tsx
-│  │  │  ├─ App.tsx
-│  │  │  └─ main.tsx
-│  │  ├─ vite.config.ts
-│  │  └─ package.json
+│  │  └─ src/
+│  │     ├─ pages/
+│  │     │  ├─ components/           # 组件文档页面
+│  │     │  │  ├─ Card.page.tsx
+│  │     │  │  ├─ Button.page.tsx
+│  │     │  │  └─ ...
+│  │     │  ├─ hooks/               # Hooks 文档页面
+│  │     │  │  ├─ useCounter.page.tsx
+│  │     │  │  └─ ...
+│  │     │  ├─ ComponentLayout.tsx  # 组件文档布局
+│  │     │  └─ Home.tsx
+│  │     └─ router.tsx
 │  │
 │  ├─ vue-docs/                      # Vue 文档应用
-│  │  ├─ src/
-│  │  │  ├─ pages/
-│  │  │  ├─ router.ts
-│  │  │  ├─ App.vue
-│  │  │  └─ main.ts
-│  │  ├─ vite.config.ts
-│  │  └─ package.json
+│  │  └─ src/
+│  │     ├─ pages/
+│  │     │  ├─ components/
+│  │     │  │  ├─ Card.page.vue
+│  │     │  │  ├─ Button.page.vue
+│  │     │  │  └─ ...
+│  │     │  ├─ hooks/
+│  │     │  ├─ ComponentLayout.vue
+│  │     │  └─ Home.vue
+│  │     └─ router.ts
 │  │
-│  └─ site/                          # 总入口 / 选框架 / 理念
-│     ├─ src/
-│     ├─ vite.config.ts
-│     └─ package.json
+│  └─ site/                          # 项目主页
 │
 ├─ packages/
-│  ├─ react-ui/
-│  ├─ react-hooks/
+│  ├─ react-ui/                      # React UI 组件库
+│  ├─ react-hooks/                  # React Hooks 库
+│  ├─ vue-ui/                       # Vue UI 组件库
+│  ├─ vue-hooks/                    # Vue Hooks 库
 │  ├─ util/
-│  ├─ vue-ui/
-│  ├─ vue-hooks/
+│  ├─ ts-config/
 │  │
-│  ├─ docs-core/                     # 文档运行时核心（无框架）
-│  │  ├─ demo-registry.ts
-│  │  ├─ api-registry.ts
-│  │  └─ types.ts
+│  ├─ docs-preview-react/          # React 预览容器组件
+│  │  └─ src/
+│  │     ├─ Preview.tsx           # 预览容器
+│  │     ├─ CodeBlock.tsx         # 代码展示
+│  │     ├─ PreviewContainer.tsx   # 组合容器
+│  │     └─ index.ts
 │  │
-│  ├─ docs-ui-react/                 # React 文档 UI
-│  │  ├─ DemoLayout.tsx
-│  │  ├─ PropsTable.tsx
-│  │  └─ HooksPanel.tsx
+│  ├─ docs-preview-vue/            # Vue 预览容器组件
+│  │  └─ src/
+│  │     ├─ Preview.vue           # 预览容器
+│  │     ├─ CodeBlock.vue         # 代码展示
+│  │     ├─ PreviewContainer.vue   # 组合容器
+│  │     └─ index.ts
 │  │
-│  ├─ docs-ui-vue/                   # Vue 文档 UI
-│  │  ├─ DemoLayout.vue
-│  │  ├─ PropsTable.vue
-│  │  └─ HooksPanel.vue
+│  ├─ docs-ui-react/               # React API 文档 UI
+│  │  └─ src/
+│  │     ├─ PropsTable.tsx        # Props 表格
+│  │     ├─ EventsTable.tsx       # Events 表格
+│  │     ├─ SlotsTable.tsx        # Slots 表格
+│  │     └─ index.ts
 │  │
-│  ├─ doc-schema/                    # API / Demo 语义模型
-│  └─ doc-utils/                     # schema → UI 转换工具
-│
-├─ configs/
-├─ turbo.json
-├─ pnpm-workspace.yaml
-└─ package.json
+│  ├─ docs-ui-vue/                 # Vue API 文档 UI
+│  │  └─ src/
+│  │     ├─ PropsTable.vue
+│  │     ├─ EventsTable.vue
+│  │     ├─ SlotsTable.vue
+│  │     └─ index.ts
+│  │
+│  ├─ doc-schema/                  # 文档元数据类型定义
+│  └─ doc-utils/                   # 文档处理工具集
 ```
 
 ---
 
-## 三、依赖关系（最终版，禁止破坏）
+## 三、依赖关系
 
 ```txt
-apps/*
- ├─ docs-core
- ├─ doc-schema
- ├─ doc-utils
- └─ docs-ui-*
+apps/react-docs
+ ├─ @scxfe/react-ui
+ ├─ @scxfe/react-hooks
+ ├─ @scxfe/docs-preview-react    # 预览容器
+ ├─ @scxfe/docs-ui-react        # API 表格
+ └─ @scxfe/doc-schema
 
-docs-ui-*  ──▶ doc-schema
-docs-core   ──▶ doc-schema
+apps/vue-docs
+ ├─ @scxfe/vue-ui
+ ├─ @scxfe/vue-hooks
+ ├─ @scxfe/docs-preview-vue
+ ├─ @scxfe/docs-ui-vue
+ └─ @scxfe/doc-schema
 
-react-docs  ──▶ react-ui / react-hooks
-vue-docs    ──▶ vue-ui / vue-hooks
+docs-preview-react  ──▶ doc-schema
+docs-preview-vue   ──▶ doc-schema
+docs-ui-react      ──▶ doc-schema
+docs-ui-vue        ──▶ doc-schema
 
 packages/*  不依赖 apps/*
 ```
 
 ---
 
-## 四、Vue Demo 的最终规范
+## 四、包职责说明
 
-### 唯一推荐方式：SFC Demo
+### 4.1 docs-preview-\* 包
 
-```txt
-packages/vue-ui/
-└─ demos/
-   ├─ ButtonBasic.demo.vue
-   ├─ ButtonDisabled.demo.vue
+**职责**：提供组件预览和代码展示功能
+
+| 组件             | 功能                     |
+| ---------------- | ------------------------ |
+| Preview          | 组件预览容器，统一样式   |
+| CodeBlock        | 代码展示，支持复制和高亮 |
+| PreviewContainer | 组合预览和代码           |
+
+**用途**：在文档页面中展示 demo 示例
+
+### 4.2 docs-ui-\* 包
+
+**职责**：提供 API 文档表格展示功能
+
+| 组件        | 功能     |
+| ----------- | -------- |
+| PropsTable  | 属性表格 |
+| EventsTable | 事件表格 |
+| SlotsTable  | 插槽表格 |
+
+**用途**：在文档页面中展示组件 API 文档
+
+### 4.3 包职责对比
+
+| 包              | 职责                | 关注点    |
+| --------------- | ------------------- | --------- |
+| docs-preview-\* | 组件预览 + 代码展示 | Demo 展示 |
+| docs-ui-\*      | API 表格            | 文档展示  |
+
+**无重叠**：两个包的职责完全分离，互不干扰
+
+---
+
+## 五、预览容器组件设计
+
+### 5.1 Preview 组件
+
+用于实时渲染组件，提供统一的预览容器样式。
+
+```tsx
+interface PreviewProps {
+  title?: string; // 组件标题
+  description?: string; // 组件描述
+  children: ReactNode; // 要渲染的组件
+  width?: 'full' | 'container' | 'narrow'; // 容器宽度
+  background?: 'white' | 'gray' | 'transparent'; // 背景颜色
+  bordered?: boolean; // 是否显示边框
+}
 ```
 
+### 5.2 CodeBlock 组件
+
+用于展示代码示例，支持语法高亮和复制功能。
+
+```tsx
+interface CodeBlockProps {
+  code: string; // 代码内容
+  language?: 'tsx' | 'ts' | 'vue' | 'javascript'; // 语言类型
+  showCopy?: boolean; // 是否显示复制按钮
+  showLineNumbers?: boolean; // 是否显示行号
+  title?: string; // 代码块标题
+}
+```
+
+### 5.3 PreviewContainer 组件
+
+组合 Preview 和 CodeBlock，一键展示预览和代码。
+
+```tsx
+interface PreviewContainerProps extends PreviewProps {
+  code: string; // 代码内容
+  codeLanguage?: string; // 代码语言
+  showCode?: boolean; // 是否显示代码
+  layout?: 'vertical' | 'horizontal'; // 布局方式
+}
+```
+
+---
+
+## 六、文档页面示例
+
+### 6.1 React 文档页面
+
+```tsx
+// apps/react-docs/src/pages/components/Card.page.tsx
+import React from 'react';
+import { Card, CardMode } from '@scxfe/react-ui';
+import { PreviewContainer } from '@scxfe/docs-preview-react';
+import { PropsTable } from '@scxfe/docs-ui-react';
+import { ComponentLayout } from '../ComponentLayout';
+
+const cardMeta = {
+  name: 'Card',
+  props: [
+    {
+      name: 'mode',
+      type: { name: 'CardMode', raw: 'CardMode' },
+      required: false,
+      default: 'CardMode.DEFAULT',
+      description: '卡片模式',
+    },
+  ],
+  events: [],
+  slots: [],
+};
+
+export default function CardPage() {
+  return (
+    <ComponentLayout title="Card 卡片" description="基础卡片容器">
+      <section className="doc-section">
+        <h2>基础用法</h2>
+        <PreviewContainer title="默认模式" code="<Card mode={CardMode.DEFAULT}>...</Card>">
+          <Card mode={CardMode.DEFAULT}>内容</Card>
+        </PreviewContainer>
+      </section>
+      <section className="doc-section">
+        <h2>API</h2>
+        <PropsTable meta={cardMeta} />
+      </section>
+    </ComponentLayout>
+  );
+}
+```
+
+### 6.2 Vue 文档页面
+
 ```vue
+<!-- apps/vue-docs/src/pages/components/Card.page.vue -->
 <script setup lang="ts">
-import { Button } from '../src';
+import Card from '@scxfe/vue-ui/components/Card.vue';
+import { PreviewContainer } from '@scxfe/docs-preview-vue';
+import { PropsTable } from '@scxfe/docs-ui-vue';
+import ComponentLayout from '../ComponentLayout.vue';
+
+const cardMeta = {
+  name: 'Card',
+  props: [
+    {
+      name: 'title',
+      type: { name: 'string' },
+      required: false,
+      default: "''",
+      description: '卡片标题',
+    },
+  ],
+  events: [],
+  slots: [
+    { name: 'header', description: '卡片头部插槽' },
+    { name: 'default', description: '卡片内容插槽' },
+  ],
+};
+
+const basicCardCode = `<Card title="默认卡片">
+  <p>内容</p>
+</Card>`;
 </script>
 
 <template>
-  <Button>Click</Button>
+  <ComponentLayout title="Card 卡片" description="基础卡片容器">
+    <section class="doc-section">
+      <h2>基础用法</h2>
+      <PreviewContainer title="默认卡片" :code="basicCardCode">
+        <Card title="默认卡片">
+          <p>内容</p>
+        </Card>
+      </PreviewContainer>
+    </section>
+    <section class="doc-section">
+      <h2>API</h2>
+      <PropsTable :meta="cardMeta" />
+    </section>
+  </ComponentLayout>
 </template>
 ```
 
-在 `vue-docs` 中：
-
-```ts
-import ButtonBasic from '@repo/vue-ui/demos/ButtonBasic.demo.vue';
-```
-
-### 明确禁止
-
-- runtime template string
-- `component: { template }`
-- 任意形式的字符串编译
-
-这是**不可妥协条款**。
-
 ---
 
-## 五、React Demo 的最终规范（对称设计）
+## 七、路由配置
+
+### 7.1 React 路由
 
 ```tsx
-// packages/react-ui/demos/ButtonBasic.demo.tsx
-import { Button } from '../src';
+// apps/react-docs/src/router.tsx
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './pages/Home';
 
-export default function Demo() {
-  return <Button>Click</Button>;
-}
+const routes = [
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/components/card',
+    lazy: () =>
+      import('./pages/components/Card.page').then((m) => ({
+        Component: m.default,
+      })),
+  },
+  {
+    path: '/components/button',
+    lazy: () =>
+      import('./pages/components/Button.page').then((m) => ({
+        Component: m.default,
+      })),
+  },
+  {
+    path: '/hooks/use-counter',
+    lazy: () =>
+      import('./pages/hooks/useCounter.page').then((m) => ({
+        Component: m.default,
+      })),
+  },
+  // 继续添加其他路由...
+];
+
+export const router = createBrowserRouter(routes);
 ```
 
-- demo 就是 React 组件
-- hooks demo 也是组件
-
----
-
-## 六、doc-schema：中枢神经（v1 定案）
-
-这是整个系统最重要的“协议层”。
+### 7.2 Vue 路由
 
 ```ts
-// packages/doc-schema/src/index.ts
+// apps/vue-docs/src/router.ts
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 
-export interface TypeRef {
-  name: string;
-  raw?: string;
-}
+const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    component: () => import('./pages/Home.vue'),
+  },
+  {
+    path: '/components/card',
+    component: () => import('./pages/components/Card.page.vue'),
+  },
+  {
+    path: '/components/button',
+    component: () => import('./pages/components/Button.page.vue'),
+  },
+  {
+    path: '/hooks/use-counter',
+    component: () => import('./pages/hooks/useCounter.page.vue'),
+  },
+  // 继续添加其他路由...
+];
 
-export interface PropMeta {
-  name: string;
-  type: TypeRef;
-  required: boolean;
-  default?: string;
-  description?: string;
-}
-
-export interface EventMeta {
-  name: string;
-  payload?: TypeRef;
-  description?: string;
-}
-
-export interface SlotMeta {
-  name: string;
-  props?: Record<string, TypeRef>;
-}
-
-export interface ComponentMeta {
-  name: string;
-  props: PropMeta[];
-  events?: EventMeta[];
-  slots?: SlotMeta[];
-}
-```
-
-### 重要设计决策
-
-- React `children` → SlotMeta
-- React `onXxx` → EventMeta
-- Vue emits / slots → 同构映射
-
-这是**最大公约数模型**。
-
----
-
-## 七、docs-core：文档运行时（不碰 UI）
-
-`docs-core` 只做三件事：
-
-1. **注册 demo**
-2. **加载 API meta**
-3. **组织页面结构数据**
-
-```ts
-registerComponent({
-  name: 'Button',
-  demos: [ButtonBasic, ButtonDisabled],
-  meta: loadComponentMeta('Button'),
+export const router = createRouter({
+  history: createWebHistory(),
+  routes,
 });
 ```
 
-它不渲染、不关心 React / Vue。
+---
+
+## 八、样式规范
+
+```css
+.preview {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.preview-header {
+  padding: 16px;
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.preview-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.preview-description {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.preview-content {
+  padding: 24px;
+  background: white;
+}
+
+.code-block {
+  margin-top: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #2d3748;
+  color: #a0aec0;
+  font-size: 12px;
+}
+
+.code-content {
+  padding: 16px;
+  background: #1a202c;
+  color: #48bb78;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+```
 
 ---
 
-## 八、docs-ui-react / docs-ui-vue：共享设计语言
+## 九、开发指南
 
-### 职责边界
+### 9.1 创建新组件文档页面
 
-- 接收 `ComponentMeta`
-- 渲染 Props / Events / Slots
-- 渲染 Demo 容器
+#### React
 
-UI 行为一致，技术栈不同。
+1. 在 `apps/react-docs/src/pages/components/` 创建 `ComponentName.page.tsx`
+2. 导入组件和必要的包
+3. 编写文档页面，使用 `PreviewContainer` 展示示例
+4. 在 `router.tsx` 中添加路由
 
-这一步解决了你指出的：
+#### Vue
 
-> 三个独立应用维护成本过大
+1. 在 `apps/vue-docs/src/pages/components/` 创建 `ComponentName.page.vue`
+2. 导入组件和必要的包
+3. 编写文档页面，使用 `PreviewContainer` 展示示例
+4. 在 `router.ts` 中添加路由
 
-**现在是：**
+### 9.2 添加新示例
 
-- 3 个 app
-- 1 套逻辑
-- 2 套 UI 实现
-- 1 套 schema
+直接在文档页面中添加新的 `<PreviewContainer>`：
 
----
-
-## 九、site 的最终定位（克制）
-
-site **不展示 demo**。
-
-它只负责：
-
-- 框架选择
-- 设计理念
-- 链接跳转
-
-这是一个“门厅”，不是“展厅”。
+```tsx
+<PreviewContainer title="新示例" description="描述" code="代码">
+  <ComponentName>内容</ComponentName>
+</PreviewContainer>
+```
 
 ---
 
-## 十、最终演进路径（非常重要）
+## 十、总结
 
-### Phase 1（现在就该做）
+### 核心设计
 
-- 定 doc-schema v1
-- 跑通一个 Button（React + Vue）
+- **docs-preview-\* / docs-ui-\***：两个独立包，职责完全分离
+  - docs-preview-\*：组件预览 + 代码展示
+  - docs-ui-\*：API 文档表格
+- **文档页面化**：在 apps 层创建文档页面
+- **直接路由配置**：无需注册表，直接在 router 中配置
+- **样式集中管理**：Preview 和 CodeBlock 提供统一样式
+- **代码展示灵活**：支持手动编写代码或自动提取
 
-### Phase 2
+### 优势
 
-- 引入 API 自动生成
-- hooks demo 规范化
+| 维度     | 优势              |
+| -------- | ----------------- |
+| 文件数量 | 从 30+ 减少到 10+ |
+| 样式管理 | 统一管理          |
+| 文档编写 | 像写普通页面      |
+| 路由配置 | 简单直接          |
+| 维护成本 | 低                |
+| 可扩展性 | 高                |
 
-### Phase 3
+### 下一步
 
-- props playground
-- API diff / 版本对比
+1. 创建 `docs-preview-react` 和 `docs-preview-vue` 包
+2. 实现预览容器组件
+3. 迁移现有 demo 到文档页面
+4. 删除旧 demo 文件
+5. 验证和测试
 
 ---
+
+## 相关文档
+
+- [DOC_TASK.md](./DOC_TASK.md) - 实施计划和任务清单
+- [AGENTS.md](./AGENTS.md) - 项目开发指南
+- [README.md](./README.md) - 项目介绍

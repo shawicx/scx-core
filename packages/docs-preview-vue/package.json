@@ -1,0 +1,38 @@
+{
+  "name": "@scxfe/docs-preview-vue",
+  "version": "1.0.0",
+  "description": "Vue documentation preview components",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "keywords": [
+    "vue",
+    "documentation",
+    "preview",
+    "components"
+  ],
+  "author": "scx",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": ">=3.4.0"
+  },
+  "dependencies": {
+    "@scxfe/doc-schema": "workspace:^"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vue": "^3.4.0",
+    "vue-tsc": "^2.0.0"
+  }
+}
