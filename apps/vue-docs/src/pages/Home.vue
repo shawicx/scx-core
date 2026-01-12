@@ -7,16 +7,26 @@
 
     <main class="main">
       <section class="section">
-        <h2 class="section-title">组件列表</h2>
+        <h2 class="section-title">UI 组件</h2>
         <div class="component-grid">
           <RouterLink
-            v-for="component in components"
+            v-for="component in uiComponents"
             :key="component.name"
-            :to="`/components/${component.name}`"
+            :to="component.path"
             class="component-card"
           >
             <h3 class="component-name">{{ component.displayName }}</h3>
             <p class="component-description">{{ component.description }}</p>
+          </RouterLink>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Hooks</h2>
+        <div class="component-grid">
+          <RouterLink v-for="hook in hooks" :key="hook.name" :to="hook.path" class="component-card">
+            <h3 class="component-name">{{ hook.displayName }}</h3>
+            <p class="component-description">{{ hook.description }}</p>
           </RouterLink>
         </div>
       </section>
@@ -31,17 +41,55 @@ interface Component {
   name: string;
   displayName: string;
   description: string;
+  path: string;
 }
 
-const components: Component[] = [
+const uiComponents: Component[] = [
   {
     name: 'preview-example',
     displayName: '预览容器示例',
     description: '文档预览容器组件的使用示例',
+    path: '/preview-example',
   },
-  { name: 'Button', displayName: 'Button 按钮', description: '功能多样的按钮组件，支持多种样式' },
-  { name: 'Card', displayName: 'Card 卡片', description: '灵活的内容组织卡片组件' },
-  { name: 'Counter', displayName: 'Counter 计数器', description: '简单的计数器组件，支持增减操作' },
+  {
+    name: 'Button',
+    displayName: 'Button 按钮',
+    description: '功能多样的按钮组件，支持多种样式',
+    path: '/components/button',
+  },
+  {
+    name: 'Card',
+    displayName: 'Card 卡片',
+    description: '灵活的内容组织卡片组件',
+    path: '/components/card',
+  },
+  {
+    name: 'Counter',
+    displayName: 'Counter 计数器',
+    description: '简单的计数器组件，支持增减操作',
+    path: '/components/counter',
+  },
+];
+
+const hooks: Component[] = [
+  {
+    name: 'use-counter',
+    displayName: 'useCounter 计数器',
+    description: '简单的计数器 Hook',
+    path: '/hooks/use-counter',
+  },
+  {
+    name: 'use-toggle',
+    displayName: 'useToggle 切换',
+    description: '布尔值切换 Hook',
+    path: '/hooks/use-toggle',
+  },
+  {
+    name: 'use-local-storage',
+    displayName: 'useLocalStorage 本地存储',
+    description: '本地存储同步 Hook',
+    path: '/hooks/use-local-storage',
+  },
 ];
 </script>
 

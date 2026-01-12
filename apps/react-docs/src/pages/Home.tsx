@@ -23,6 +23,7 @@ function Home() {
               <p>文档预览容器组件的使用示例</p>
             </Link>
 
+            <h3>UI 组件</h3>
             <Link to="/components/a-map" className="component-item">
               <h3>AMap 高德地图</h3>
               <p>集成高德地图的 React 组件</p>
@@ -41,6 +42,22 @@ function Home() {
             <Link to="/components/gradient-border" className="component-item">
               <h3>GradientBorder 渐变边框</h3>
               <p>带有渐变边框的容器组件</p>
+            </Link>
+
+            <h3>Hooks</h3>
+            <Link to="/hooks/use-counter" className="component-item">
+              <h3>useCounter 计数器</h3>
+              <p>简单的计数器 Hook</p>
+            </Link>
+
+            <Link to="/hooks/use-toggle" className="component-item">
+              <h3>useToggle 切换</h3>
+              <p>布尔值切换 Hook</p>
+            </Link>
+
+            <Link to="/hooks/use-local-storage" className="component-item">
+              <h3>useLocalStorage 本地存储</h3>
+              <p>本地存储同步 Hook</p>
             </Link>
           </div>
         </section>

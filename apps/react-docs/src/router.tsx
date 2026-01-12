@@ -7,8 +7,11 @@ function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/components/:componentName" element={<ComponentDocs />} />
       <Route path="/preview-example" element={<PreviewExample />} />
+
+      <Route path="/components/:componentName" element={<ComponentDocs />} />
+      <Route path="/hooks/:componentName" element={<ComponentDocs />} />
+
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
