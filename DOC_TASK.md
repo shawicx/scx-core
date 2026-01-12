@@ -125,27 +125,27 @@
 
 #### 5. 创建 ComponentLayout 组件
 
-- [ ] 创建 `apps/react-docs/src/pages/ComponentLayout.tsx`
-- [ ] 创建 `apps/vue-docs/src/pages/ComponentLayout.vue`
+- [x] 创建 `apps/react-docs/src/pages/ComponentLayout.tsx`
+- [x] 创建 `apps/vue-docs/src/pages/ComponentLayout.vue`
 
 #### 6. 删除旧 Demo 文件
 
 ##### React
 
-- [ ] 删除 `packages/react-ui/src/card/demos/`
-- [ ] 删除 `packages/react-ui/src/caption/demos/`
-- [ ] 删除 `packages/react-ui/src/gradient-border/demos/`
-- [ ] 删除 `packages/react-ui/src/a-map/demos/`
-- [ ] 删除 `packages/react-hooks/src/useCounter/demos/`
-- [ ] 删除 `packages/react-hooks/src/useToggle/demos/`
-- [ ] 删除 `packages/react-hooks/src/useLocalStorage/demos/`
+- [x] 删除 `packages/react-ui/src/card/demos/`
+- [x] 删除 `packages/react-ui/src/caption/demos/`
+- [x] 删除 `packages/react-ui/src/gradient-border/demos/`
+- [x] 删除 `packages/react-ui/src/a-map/demos/`
+- [x] 删除 `packages/react-hooks/src/useCounter/demos/`
+- [x] 删除 `packages/react-hooks/src/useToggle/demos/`
+- [x] 删除 `packages/react-hooks/src/useLocalStorage/demos/`
 
 ##### Vue
 
-- [ ] 删除 `packages/vue-ui/src/components/demos/`
-- [ ] 删除 `packages/vue-hooks/src/useCounter/demos/`
-- [ ] 删除 `packages/vue-hooks/src/useToggle/demos/`
-- [ ] 删除 `packages/vue-hooks/src/useLocalStorage/demos/`
+- [x] 删除 `packages/vue-ui/src/components/demos/`
+- [x] 删除 `packages/vue-hooks/src/useCounter/demos/`
+- [x] 删除 `packages/vue-hooks/src/useToggle/demos/`
+- [x] 删除 `packages/vue-hooks/src/useLocalStorage/demos/`
 
 #### 7. 验证和测试
 
