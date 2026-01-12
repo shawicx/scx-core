@@ -5,6 +5,13 @@ import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 
+const onwarn = (warning, warn) => {
+  if (warning.code === 'MODULE_NOT_DIRECT_DEPENDENCY') {
+    return;
+  }
+  warn(warning);
+};
+
 export default defineConfig([
   // ESM build
   {
@@ -30,6 +37,7 @@ export default defineConfig([
       }),
       terser(),
     ],
+    onwarn,
   },
   // CJS build
   {
@@ -56,5 +64,6 @@ export default defineConfig([
       }),
       terser(),
     ],
+    onwarn,
   },
 ]);

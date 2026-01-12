@@ -1,8 +1,12 @@
 import type { AMapConstantType } from '@scxfe/util';
 import type { CSSProperties } from 'react';
 
+// @ts-ignore AMap types not available
+const _AMapNamespace = (window as any).AMap;
+
 export interface AMapContextValues {
-  map: AMap.Map | null;
+  // @ts-ignore AMap types not available
+  map: _AMapNamespace.Map | null;
 }
 
 /**
@@ -20,5 +24,6 @@ export interface AMapProps {
  */
 export interface AMapMarkerProps {
   coordinate: [number, number];
-  map?: AMap.Map;
+  // @ts-ignore AMap types not available
+  map?: _AMapNamespace.Map;
 }

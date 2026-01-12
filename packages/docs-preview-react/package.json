@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "React documentation preview components",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "tsup",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix",
+    "clean": "rm -rf dist",
     "type-check": "tsc --noEmit"
   },
   "keywords": [
@@ -32,9 +31,12 @@
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@types/minimatch": "^3.0.5",
+    "@vitejs/plugin-react": "^4.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsup": "^8.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

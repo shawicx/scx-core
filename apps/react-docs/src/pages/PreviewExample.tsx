@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { GradientBorder } from '@scxfe/react-ui';
 import { Preview, CodeBlock, PreviewContainer } from '@scxfe/docs-preview-react';
 
 function PreviewExample() {
@@ -18,7 +19,9 @@ function PreviewExample() {
           <h2>Preview 组件</h2>
           <p>Preview 组件提供一个统一的预览容器样式。</p>
           <Preview>
-            <div style={{ padding: '1rem', border: '1px dashed #ccc' }}>预览内容</div>
+            <div style={{ padding: '1rem', border: '1px dashed #ccc' }}>
+              <GradientBorder gradientColor="red" width="400px" height="300px" />
+            </div>
           </Preview>
         </section>
 

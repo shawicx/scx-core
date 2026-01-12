@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import type { PreviewProps } from './types';
 import './styles/Preview.css';
 

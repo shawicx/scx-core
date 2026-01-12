@@ -17,6 +17,7 @@
     "@scxfe/docs-core": "workspace:^",
     "@scxfe/docs-preview-react": "workspace:^",
     "@scxfe/docs-ui-react": "workspace:^",
+    "@scxfe/react-hooks": "workspace:^",
     "@scxfe/react-ui": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

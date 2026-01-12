@@ -12,7 +12,7 @@
         <h2>Preview 组件</h2>
         <p>Preview 组件提供一个统一的预览容器样式。</p>
         <Preview>
-          <div style="padding: '1rem', border: '1px dashed #ccc'">预览内容</div>
+          <div style="padding: 1rem; border: 1px dashed #ccc">预览内容</div>
         </Preview>
       </section>
 
@@ -75,9 +75,7 @@
 </template>
 
 <script setup lang="ts">
-import Preview from '@scxfe/docs-preview-vue/Preview.vue';
-import CodeBlock from '@scxfe/docs-preview-vue/CodeBlock.vue';
-import PreviewContainer from '@scxfe/docs-preview-vue/PreviewContainer.vue';
+import { Preview, CodeBlock, PreviewContainer } from '@scxfe/docs-preview-vue';
 
 const codeExample = `import { Button } from '@scxfe/vue-ui';
 

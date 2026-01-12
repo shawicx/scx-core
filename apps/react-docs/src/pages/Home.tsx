@@ -24,10 +24,6 @@ function Home() {
             </Link>
 
             <h3>UI 组件</h3>
-            <Link to="/components/a-map" className="component-item">
-              <h3>AMap 高德地图</h3>
-              <p>集成高德地图的 React 组件</p>
-            </Link>
 
             <Link to="/components/caption" className="component-item">
               <h3>Caption 标题</h3>
