@@ -1,6 +1,6 @@
 # SCX Core 文档架构重构实施计划
 
-> 最后更新：2026-01-11
+> 最后更新：2026-01-12
 > 当前阶段：容器化重构
 
 ## 📊 进度概览
@@ -46,41 +46,41 @@
 
 ##### React 预览容器包
 
-- [ ] 创建 `packages/docs-preview-react/` 目录
-- [ ] 初始化 package.json
-- [ ] 配置 TypeScript
-- [ ] 配置构建工具（tsup）
-- [ ] 实现 `Preview.tsx` 组件
-- [ ] 实现 `CodeBlock.tsx` 组件
-- [ ] 实现 `PreviewContainer.tsx` 组件
-- [ ] 添加样式文件
-- [ ] 编写导出文件 `index.ts`
-- [ ] 构建验证
+- [x] 创建 `packages/docs-preview-react/` 目录
+- [x] 初始化 package.json
+- [x] 配置 TypeScript
+- [x] 配置构建工具（tsup）
+- [x] 实现 `Preview.tsx` 组件
+- [x] 实现 `CodeBlock.tsx` 组件
+- [x] 实现 `PreviewContainer.tsx` 组件
+- [x] 添加样式文件
+- [x] 编写导出文件 `index.ts`
+- [x] 构建验证
 
 ##### Vue 预览容器包
 
-- [ ] 创建 `packages/docs-preview-vue/` 目录
-- [ ] 初始化 package.json
-- [ ] 配置 TypeScript + Vue
-- [ ] 配置构建工具（vite）
-- [ ] 实现 `Preview.vue` 组件
-- [ ] 实现 `CodeBlock.vue` 组件
-- [ ] 实现 `PreviewContainer.vue` 组件
-- [ ] 添加样式文件
-- [ ] 编写导出文件 `index.ts`
-- [ ] 构建验证
+- [x] 创建 `packages/docs-preview-vue/` 目录
+- [x] 初始化 package.json
+- [x] 配置 TypeScript + Vue
+- [x] 配置构建工具（vite）
+- [x] 实现 `Preview.vue` 组件
+- [x] 实现 `CodeBlock.vue` 组件
+- [x] 实现 `PreviewContainer.vue` 组件
+- [x] 添加样式文件
+- [x] 编写导出文件 `index.ts`
+- [x] 构建验证
 
 #### 2. 创建文档页面目录结构
 
 ##### React Docs
 
-- [ ] 创建 `apps/react-docs/src/pages/components/` 目录
-- [ ] 创建 `apps/react-docs/src/pages/hooks/` 目录
+- [x] 创建 `apps/react-docs/src/pages/components/` 目录
+- [x] 创建 `apps/react-docs/src/pages/hooks/` 目录
 
 ##### Vue Docs
 
-- [ ] 创建 `apps/vue-docs/src/pages/components/` 目录
-- [ ] 创建 `apps/vue-docs/src/pages/hooks/` 目录
+- [x] 创建 `apps/vue-docs/src/pages/components/` 目录
+- [x] 创建 `apps/vue-docs/src/pages/hooks/` 目录
 
 #### 3. 迁移组件到文档页面
 
