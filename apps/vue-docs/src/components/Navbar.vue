@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+/**
+ * 顶部导航栏组件
+ * 支持响应式布局、主题切换、搜索框和移动端汉堡菜单
+ */
 import ThemeToggle from './ThemeToggle.vue';
 
 withDefaults(
@@ -9,6 +12,7 @@ withDefaults(
     showSearch?: boolean;
     showThemeToggle?: boolean;
     githubUrl?: string;
+    mobileMenuOpen?: boolean;
   }>(),
   {
     logo: '',
@@ -16,16 +20,36 @@ withDefaults(
     showSearch: true,
     showThemeToggle: true,
     githubUrl: 'https://github.com/shawicx/scx-core',
+    mobileMenuOpen: false,
   },
 );
 
-const mobileMenuOpen = ref(false);
+const emit = defineEmits<{
+  'update:mobileMenuOpen': [value: boolean];
+}>();
 </script>
 
 <template>
   <nav class="navbar">
     <div class="navbar-content">
       <div class="flex items-center gap-4">
+        <button
+          class="md:hidden mobile-menu-toggle"
+          @click="emit('update:mobileMenuOpen', !mobileMenuOpen)"
+          aria-label="Toggle sidebar"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 12h18 M3 6h18 M3 18h18" />
+          </svg>
+        </button>
+
         <a href="/" class="flex items-center gap-2">
           <img v-if="logo" :src="logo" alt="Logo" class="w-8 h-8" />
           <span class="text-lg font-semibold">{{ title }}</span>
@@ -54,35 +78,6 @@ const mobileMenuOpen = ref(false);
         </a>
 
         <ThemeToggle v-if="showThemeToggle" />
-      </div>
-
-      <button
-        class="md:hidden theme-toggle"
-        @click="mobileMenuOpen = !mobileMenuOpen"
-        aria-label="Toggle menu"
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path d="M3 12h18 M3 6h18 M3 18h18" />
-        </svg>
-      </button>
-    </div>
-
-    <div
-      v-if="mobileMenuOpen"
-      class="md:hidden absolute top-[var(--navbar-height)] left-0 right-0 bg-[var(--color-bg-primary)] border-b border-[var(--color-border)] p-4"
-    >
-      <div class="flex flex-col gap-4">
-        <a href="/components" class="nav-link"> 组件 </a>
-        <a href="/hooks" class="nav-link"> Hooks </a>
-        <a :href="githubUrl" class="nav-link"> GitHub </a>
-        <ThemeToggle />
       </div>
     </div>
   </nav>

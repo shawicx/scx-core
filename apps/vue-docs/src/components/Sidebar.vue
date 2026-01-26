@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+ * 侧边栏导航组件
+ * 显示导航分组和链接，支持当前路由高亮
+ */
 import { useRoute } from 'vue-router';
 
 interface SidebarItem {

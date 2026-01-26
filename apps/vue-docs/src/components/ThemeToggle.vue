@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+ * 主题切换组件
+ * 支持亮色/暗色主题切换，自动检测系统主题，并保存用户偏好
+ */
 import { ref, onMounted, onUnmounted } from 'vue';
 
 const emit = defineEmits<{

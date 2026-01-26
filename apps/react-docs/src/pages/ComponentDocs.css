@@ -214,4 +214,46 @@
   .docs-section {
     padding: var(--spacing-6);
   }
+
+  .docs-header {
+    padding: var(--spacing-8) 0;
+  }
+
+  .docs-main {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .demo-placeholder,
+  .api-placeholder {
+    padding: var(--spacing-8);
+  }
+}
+
+@media (max-width: 640px) {
+  .docs-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .docs-header {
+    padding: var(--spacing-6) 0;
+  }
+
+  .docs-section {
+    padding: var(--spacing-4);
+  }
+
+  .docs-section h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .demo-placeholder,
+  .api-placeholder {
+    padding: var(--spacing-6);
+  }
+
+  .api-table th,
+  .api-table td {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
+  }
 }

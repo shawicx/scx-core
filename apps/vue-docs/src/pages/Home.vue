@@ -194,5 +194,35 @@ const hooks: Component[] = [
   .component-grid {
     grid-template-columns: 1fr;
   }
+
+  .header {
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+
+  .section {
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .section-title {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .component-card {
+    padding: var(--spacing-4);
+  }
+
+  .component-name {
+    font-size: var(--font-size-lg);
+  }
 }
 </style>

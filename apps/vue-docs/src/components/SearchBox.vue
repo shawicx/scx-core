@@ -1,4 +1,8 @@
 <script setup lang="ts">
+/**
+ * 搜索框组件
+ * 支持键盘快捷键（Ctrl/Cmd + K）聚焦
+ */
 import { ref, onMounted, onUnmounted } from 'vue';
 
 defineProps<{

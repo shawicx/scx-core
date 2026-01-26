@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import type { SearchBoxProps } from '@scxfe/docs-design-system';
 
+/**
+ * 搜索框组件
+ * 支持键盘快捷键（Ctrl/Cmd + K）聚焦
+ * @param placeholder - 输入框占位符
+ * @param onSearch - 搜索回调函数
+ * @returns React 元素
+ */
 export function SearchBox({ placeholder = '搜索组件、Hooks...', onSearch }: SearchBoxProps = {}) {
   const [query, setQuery] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);

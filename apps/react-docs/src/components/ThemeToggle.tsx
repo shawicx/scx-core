@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react';
 import type { ThemeToggleProps } from '@scxfe/docs-design-system';
 
+/**
+ * 主题切换组件
+ * 支持亮色/暗色主题切换，自动检测系统主题，并保存用户偏好
+ * @param onThemeChange - 主题变化回调函数
+ * @returns React 元素
+ */
 export function ThemeToggle({ onThemeChange }: ThemeToggleProps = {}) {
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     const savedTheme = localStorage.getItem('theme');

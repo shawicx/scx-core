@@ -1,20 +1,46 @@
-import { useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 import type { NavbarProps } from '@scxfe/docs-design-system';
 
+interface NavbarInnerProps extends NavbarProps {
+  onMobileMenuToggle?: (open: boolean) => void;
+  mobileMenuOpen?: boolean;
+}
+
+/**
+ * 顶部导航栏组件
+ * @param props - 导航栏属性
+ * @returns React 元素
+ */
 export function Navbar({
   logo = '',
   title = 'SCX Core',
   showSearch = true,
   showThemeToggle = true,
   githubUrl = 'https://github.com/shawicx/scx-core',
-}: NavbarProps = {}) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  onMobileMenuToggle,
+  mobileMenuOpen = false,
+}: NavbarInnerProps = {}) {
   return (
     <nav className="navbar">
       <div className="navbar-content">
         <div className="flex items-center gap-4">
+          <button
+            className="md:hidden mobile-menu-toggle"
+            onClick={() => onMobileMenuToggle?.(!mobileMenuOpen)}
+            aria-label="Toggle sidebar"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M3 12h18 M3 6h18 M3 18h18" />
+            </svg>
+          </button>
+
           <a href="/" className="flex items-center gap-2">
             {logo && <img src={logo} alt="Logo" className="w-8 h-8" />}
             <span className="text-lg font-semibold">{title}</span>
@@ -48,41 +74,7 @@ export function Navbar({
 
           {showThemeToggle && <ThemeToggle />}
         </div>
-
-        <button
-          className="md:hidden theme-toggle"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M3 12h18 M3 6h18 M3 18h18" />
-          </svg>
-        </button>
       </div>
-
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-[var(--navbar-height)] left-0 right-0 bg-[var(--color-bg-primary)] border-b border-[var(--color-border)] p-4">
-          <div className="flex flex-col gap-4">
-            <a href="/components" className="nav-link">
-              组件
-            </a>
-            <a href="/hooks" className="nav-link">
-              Hooks
-            </a>
-            <a href={githubUrl} className="nav-link">
-              GitHub
-            </a>
-            <ThemeToggle />
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

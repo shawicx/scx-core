@@ -84,5 +84,23 @@ withDefaults(defineProps<Props>(), {
   .description {
     font-size: var(--font-size-base);
   }
+
+  .layout-header {
+    padding: var(--spacing-8) 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .description {
+    font-size: var(--font-size-sm);
+  }
+
+  .layout-header {
+    padding: var(--spacing-6) 0;
+  }
 }
 </style>

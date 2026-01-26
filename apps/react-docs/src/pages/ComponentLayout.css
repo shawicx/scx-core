@@ -53,4 +53,22 @@
   .component-description {
     font-size: var(--font-size-base);
   }
+
+  .layout-header {
+    padding: var(--spacing-8) 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .layout-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+
+  .component-description {
+    font-size: var(--font-size-sm);
+  }
+
+  .layout-header {
+    padding: var(--spacing-6) 0;
+  }
 }

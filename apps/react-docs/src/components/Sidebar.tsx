@@ -1,6 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import type { SidebarProps } from '@scxfe/docs-design-system';
 
+/**
+ * 侧边栏导航组件
+ * @param sections - 导航分组配置
+ * @returns React 元素
+ */
 export function Sidebar({ sections }: SidebarProps) {
   const location = useLocation();
 
