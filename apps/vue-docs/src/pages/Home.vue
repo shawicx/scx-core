@@ -96,98 +96,99 @@ const hooks: Component[] = [
 <style scoped>
 .home {
   min-height: 100vh;
-  background: linear-gradient(180deg, #fef9f3 0%, #fff5eb 100%);
+  padding: var(--spacing-12) 0;
+  background-color: var(--color-bg-primary);
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  padding: 3rem 2rem 2rem;
+  padding: var(--spacing-12) 0;
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .title {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, #ff8a5c 0%, #ff6b9d 50%, #c44569 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
 }
 
 .subtitle {
-  font-size: 1.125rem;
-  color: #636e72;
-  font-weight: 400;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-normal);
 }
 
 .main {
   flex: 1;
-  max-width: 900px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 var(--spacing-4);
   width: 100%;
 }
 
 .section {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(255, 138, 92, 0.08);
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
 }
 
 .section-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #2d3436;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-6);
+  color: var(--color-text-primary);
 }
 
 .component-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-6);
 }
 
 .component-card {
   display: block;
-  padding: 1.75rem;
-  background: white;
-  border: 1px solid rgba(255, 138, 92, 0.1);
-  border-radius: 12px;
+  padding: var(--spacing-6);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .component-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(255, 138, 92, 0.15);
-  border-color: rgba(255, 138, 92, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
 .component-name {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #2d3436;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-primary);
 }
 
 .component-description {
-  font-size: 0.875rem;
-  color: #636e72;
-  line-height: 1.5;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
 }
 
 @media (max-width: 768px) {
   .title {
-    font-size: 2.25rem;
+    font-size: var(--font-size-4xl);
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
 
   .component-grid {

@@ -3,6 +3,8 @@ export type PreviewWidth = 'full' | 'container' | 'narrow';
 export type PreviewBackground = 'white' | 'gray' | 'transparent';
 
 export interface PreviewProps {
+  title?: string;
+  description?: string;
   width?: PreviewWidth;
   background?: PreviewBackground;
   bordered?: boolean;

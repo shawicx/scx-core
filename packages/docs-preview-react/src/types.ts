@@ -4,6 +4,8 @@ export type PreviewBackground = 'white' | 'gray' | 'transparent';
 
 export interface PreviewProps {
   children: React.ReactNode;
+  title?: string;
+  description?: string;
   width?: PreviewWidth;
   background?: PreviewBackground;
   bordered?: boolean;

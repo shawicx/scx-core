@@ -15,6 +15,7 @@
     "@scxfe/doc-schema": "workspace:^",
     "@scxfe/doc-utils": "workspace:^",
     "@scxfe/docs-core": "workspace:^",
+    "@scxfe/docs-design-system": "workspace:^",
     "@scxfe/docs-preview-react": "workspace:^",
     "@scxfe/docs-ui-react": "workspace:^",
     "@scxfe/react-hooks": "workspace:^",

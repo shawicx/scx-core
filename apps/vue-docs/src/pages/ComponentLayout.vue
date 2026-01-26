@@ -2,9 +2,8 @@
   <div class="component-layout">
     <header class="layout-header">
       <div class="header-content">
-        <RouterLink to="/" class="back-link">← 返回首页</RouterLink>
-        <h1 class="title">{{ title }}</h1>
         <p v-if="category" class="category">{{ category }}</p>
+        <h1 class="title">{{ title }}</h1>
         <p v-if="description" class="description">{{ description }}</p>
       </div>
     </header>
@@ -16,8 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-
 interface Props {
   title: string;
   description?: string;
@@ -33,74 +30,59 @@ withDefaults(defineProps<Props>(), {
 <style scoped>
 .component-layout {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(180deg, #fef9f3 0%, #fff5eb 100%);
+  background-color: var(--color-bg-primary);
 }
 
 .layout-header {
-  background: white;
-  border-bottom: 1px solid rgba(255, 138, 92, 0.1);
-  padding: 1.5rem 2rem;
-  box-shadow: 0 2px 8px rgba(255, 138, 92, 0.05);
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-12) 0;
+  margin-bottom: var(--spacing-8);
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-}
-
-.back-link {
-  display: inline-block;
-  color: #ff8a5c;
-  text-decoration: none;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  transition: color 0.2s ease;
-}
-
-.back-link:hover {
-  color: #ff6b9d;
-}
-
-.title {
-  font-size: 2rem;
-  margin: 0 0 0.5rem 0;
-  color: #2d3436;
-  font-weight: 600;
-}
-
-.description {
-  font-size: 1rem;
-  color: #636e72;
-  margin: 0.5rem 0 0 0;
+  padding: 0 var(--spacing-4);
 }
 
 .category {
-  color: #636e72;
-  font-size: 0.875rem;
-  margin: 0.5rem 0 0 0;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  margin: 0 0 var(--spacing-4) 0;
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--line-height-relaxed);
 }
 
 .layout-main {
   flex: 1;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 var(--spacing-4);
   width: 100%;
 }
 
 @media (max-width: 768px) {
-  .layout-header {
-    padding: 1.25rem 1rem;
-  }
-
   .title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-3xl);
   }
 
-  .layout-main {
-    padding: 1rem;
+  .description {
+    font-size: var(--font-size-base);
   }
 }
 </style>

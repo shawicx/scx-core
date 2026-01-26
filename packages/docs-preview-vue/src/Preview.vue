@@ -16,6 +16,10 @@ const className = computed(() => {
 
 <template>
   <div :class="className">
+    <div v-if="title || description" class="preview__header">
+      <div v-if="title" class="preview__title">{{ title }}</div>
+      <div v-if="description" class="preview__description">{{ description }}</div>
+    </div>
     <div class="preview__content">
       <slot />
     </div>

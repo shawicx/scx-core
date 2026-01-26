@@ -103,13 +103,10 @@ function ComponentDocs() {
     <div className="component-docs">
       <header className="docs-header">
         <div className="header-content">
-          <Link to="/" className="back-link">
-            ← 返回首页
-          </Link>
-          <h1>{displayName} 组件</h1>
           {componentData?.category && (
             <p className="component-category">{componentData.category}</p>
           )}
+          <h1>{displayName} 组件</h1>
         </div>
       </header>
 

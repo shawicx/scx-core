@@ -4,7 +4,7 @@ import CodeBlock from './CodeBlock.vue';
 import type { PreviewContainerProps } from './types';
 import './styles/PreviewContainer.css';
 
-const props = withDefaults(defineProps<PreviewContainerProps>(), {
+withDefaults(defineProps<PreviewContainerProps>(), {
   language: 'vue',
   showLineNumbers: false,
   showCopy: true,

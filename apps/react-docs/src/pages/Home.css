@@ -1,117 +1,121 @@
 .home {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(180deg, #fef9f3 0%, #fff5eb 100%);
+  padding: var(--spacing-12) 0;
+  background-color: var(--color-bg-primary);
 }
 
 .home-header {
-  padding: 3rem 2rem 2rem;
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-12) 0;
 }
 
 .home-header h1 {
-  font-size: 3rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, #ff8a5c 0%, #ff6b9d 50%, #c44569 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.02em;
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+  line-height: var(--line-height-tight);
 }
 
 .subtitle {
-  font-size: 1.125rem;
-  color: #636e72;
-  font-weight: 400;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-normal);
 }
 
 .home-main {
-  flex: 1;
-  max-width: 900px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 var(--spacing-4);
   width: 100%;
 }
 
 .intro {
-  margin-bottom: 3rem;
+  margin-bottom: var(--spacing-12);
   text-align: center;
+  padding: var(--spacing-8) 0;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
 }
 
 .intro h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: #2d3436;
-  font-weight: 600;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-4);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
 }
 
 .intro p {
-  font-size: 1rem;
-  color: #636e72;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
-.components h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #2d3436;
-  font-weight: 600;
+.components h2,
+.components h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-6);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--spacing-10);
 }
 
 .component-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
 }
 
 .component-item {
-  background: white;
-  border: 1px solid rgba(255, 138, 92, 0.1);
-  border-radius: 12px;
-  padding: 1.75rem;
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-6);
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 138, 92, 0.08);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
 }
 
 .component-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(255, 138, 92, 0.15);
-  border-color: rgba(255, 138, 92, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
 .component-item h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #2d3436;
-  font-weight: 600;
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
 }
 
 .component-item p {
-  color: #636e72;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
 }
 
 .home-footer {
-  padding: 2rem;
+  padding: var(--spacing-8) 0;
   text-align: center;
-  color: #636e72;
-  font-size: 0.875rem;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-12);
 }
 
 @media (max-width: 768px) {
   .home-header h1 {
-    font-size: 2.25rem;
+    font-size: var(--font-size-4xl);
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
 
   .component-list {

@@ -116,6 +116,9 @@ importers:
       '@scxfe/docs-core':
         specifier: workspace:^
         version: link:../../packages/docs-core
+      '@scxfe/docs-design-system':
+        specifier: workspace:^
+        version: link:../../packages/docs-design-system
       '@scxfe/docs-preview-react':
         specifier: workspace:^
         version: link:../../packages/docs-preview-react
@@ -196,6 +199,9 @@ importers:
       '@scxfe/docs-core':
         specifier: workspace:^
         version: link:../../packages/docs-core
+      '@scxfe/docs-design-system':
+        specifier: workspace:^
+        version: link:../../packages/docs-design-system
       '@scxfe/docs-preview-vue':
         specifier: workspace:^
         version: link:../../packages/docs-preview-vue
@@ -273,6 +279,15 @@ importers:
       '@scxfe/doc-schema':
         specifier: workspace:^
         version: link:../doc-schema
+    devDependencies:
+      tsup:
+        specifier: ^8.5.1
+        version: 8.5.1(@microsoft/api-extractor@7.55.2(@types/node@25.0.1))(@swc/core@1.9.2(@swc/helpers@0.5.15))(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.2)
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/docs-design-system:
     devDependencies:
       tsup:
         specifier: ^8.5.1

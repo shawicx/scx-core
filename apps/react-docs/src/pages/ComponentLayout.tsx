@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
-import './ComponentLayout.css';
+import type { ReactNode } from 'react';
 
 interface ComponentLayoutProps {
   title: string;
   description?: string;
   category?: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 function ComponentLayout({ title, description, category, children }: ComponentLayoutProps) {
@@ -13,11 +12,8 @@ function ComponentLayout({ title, description, category, children }: ComponentLa
     <div className="component-layout">
       <header className="layout-header">
         <div className="header-content">
-          <Link to="/" className="back-link">
-            ← 返回首页
-          </Link>
-          <h1>{title}</h1>
           {category && <p className="component-category">{category}</p>}
+          <h1>{title}</h1>
           {description && <p className="component-description">{description}</p>}
         </div>
       </header>
