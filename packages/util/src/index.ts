@@ -13,9 +13,6 @@ export {
   toUrlParameters,
 } from './browser';
 
-// 常量定义
-export { AMapConstant, type AMapConstantType, UI_CLASS_NAME_PREFIX } from './constants';
-
 // 数据结构
 export {
   DoublyLinkedList,
