@@ -9,7 +9,11 @@
   "license": "ISC",
   "files": [
     "base.json",
-    "library.json"
+    "library.json",
+    "react-hooks.json",
+    "react-ui.json",
+    "vue-hooks.json",
+    "vue-ui.json"
   ],
   "publishConfig": {
     "access": "public"

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "scxfe Ui",
+  "extends": "../../packages/ts-config/react-ui.json",
+  "include": ["."]
+}

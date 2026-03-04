@@ -14,6 +14,7 @@ export default defineConfig({
   publicPath: '/',
   alias: {
     '@scxfe/constants': resolve(__dirname, 'packages/constants/src/index.ts'),
+    '@scxfe/react-ui': resolve(__dirname, 'packages/react-ui/src/index.ts'),
     '@scxfe/vue-ui': resolve(__dirname, 'packages/vue-ui/src/index.ts'),
     '@scxfe/util': resolve(__dirname, 'packages/util/src/index.ts'),
     '@scxfe/react-hooks': resolve(__dirname, 'packages/react-hooks/src/index.ts'),
@@ -29,6 +30,22 @@ export default defineConfig({
       {
         type: 'util',
         dir: 'packages/util/src',
+      },
+      {
+        type: 'react-ui',
+        dir: 'packages/react-ui/src',
+      },
+      {
+        type: 'vue-ui',
+        dir: 'packages/vue-ui/src',
+      },
+      {
+        type: 'react-hooks',
+        dir: 'packages/react-hooks/src',
+      },
+      {
+        type: 'vue-hooks',
+        dir: 'packages/vue-hooks/src',
       },
     ],
   },
