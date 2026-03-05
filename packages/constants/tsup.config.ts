@@ -4,5 +4,5 @@ export default createTsupConfig({
   entry: 'src/index.ts',
   external: [],
   tsconfig: './tsconfig.json',
-  dts: true,
+  dts: false,
 });

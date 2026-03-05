@@ -1,11 +1,11 @@
 ---
 nav:
-  title: React Ui
-  order: 2
-group:
-  title: 介绍
-  order: -1
-toc: content
+  title: React UI
+  order: 3
+  group:
+    title: 介绍
+    order: -1
+  toc: content
 ---
 
 # @scxfe/react-ui

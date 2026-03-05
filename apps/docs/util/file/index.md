@@ -1,7 +1,7 @@
 ---
 group:
-  title: 系统方法
-toc: content
+  title: 文件操作
+  toc: content
 ---
 
 ## isFileTypeAccepted - 判断文件类型是否支持
@@ -25,5 +25,5 @@ function downloadLink(url: string, filename: string): void;
 ## downloadFile - 下载文件
 
 ```typescript
-function downloadFile(fileOrUrl: File | ArrayBuffer | Blob | string, , filename: string): void
+function downloadFile(fileOrUrl: File | ArrayBuffer | Blob | string, filename: string): void;
 ```

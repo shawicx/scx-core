@@ -35,6 +35,9 @@ dist/
 .dumi/tmp
 .dumi/tmp-test
 .dumi/tmp-production
+apps/docs/.dumi/tmp
+apps/docs/.dumi/tmp-test
+apps/docs/.dumi/tmp-production
 docs-dist
 
 # Debug
