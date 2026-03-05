@@ -8,7 +8,7 @@ export default defineConfig({
     lastUpdated: true,
     showLineNum: true,
   },
-  outputPath: 'dist',
+  outputPath: 'docs-dist',
   publicPath: '/',
   alias: {
     '@scxfe/constants': resolve(__dirname, '../../packages/constants/src/index.ts'),
