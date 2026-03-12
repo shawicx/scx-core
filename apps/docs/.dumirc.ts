@@ -20,6 +20,5 @@ export default defineConfig({
   },
   resolve: {
     docDirs: ['.'],
-    atomDirs: [],
   },
 });

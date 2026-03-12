@@ -1,6 +1,7 @@
 ---
 group:
   title: HTTP
+  order: 7
   toc: content
 ---
 
