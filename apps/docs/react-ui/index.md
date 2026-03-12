@@ -5,7 +5,7 @@ nav:
   group:
     title: 介绍
     order: -1
-  toc: content
+toc: content
 ---
 
 # @scxfe/react-ui

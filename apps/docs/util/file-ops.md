@@ -2,7 +2,7 @@
 group:
   title: 文件操作
   order: 6
-  toc: content
+toc: content
 ---
 
 ## isFileTypeAccepted - 判断文件类型是否支持
